@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat help center Remi</title>
+</head>
+<body>
+<h1>Welcome to cat help center "Remi!"</h1>
+<ul>
+    <li th:each="cat: ${cats}" >
+        <a th:text="${cat.getName()}"></a>
+        <img th:src="${cat.getPicturePath()}" width="200" height="200">
+        <a href="/adopt">Adopt</a>
+    </li>
+    <!--    image path from database does not work -->
+
+</ul>
+</body>
+</html>
