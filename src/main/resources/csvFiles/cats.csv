@@ -1,0 +1,27 @@
+cat_id,cat_name,cat_age,cat_color,cat_sex,neutered,description,picture_path
+1,Mike,2,Black,Male,Yes,Mike is super friendly and affectionate as well as very playful. His favorite game is chasing the laser light. ,/images/miks.jpg
+2,Anabella,3,Chocolate,Female,Yes,"Playful, active. She would NOT be a good fit for a family with children. Needs an experienced cat owner.",/images/roberts.jpg
+3,Robert,1,Cinnamon,Male,Yes,"Robert remained a happy, playful cat. Robert gets along very well with other cats.",/images/anabella.jpg
+4,Leo,3,White,Male,No,Leo is a friendly but shy little kitty approximately 3 years old.,/images/leo.jpg
+5,Jack,5,Blue,Male,Yes,"Jack is a gorgeous Abyssinian mix who is approximately 3-years-old. He is meticulously clean, well behaved and has a great sense of humor. ",/images/jack.jpg
+6,Nala,6,Chocolate,Female,No,Nala is a sweet little kitty that is a little shy. ,/images/nala.jpg
+7,Sam,1,Sable ,Male,Yes,Sam is a friendly little kitty approximately 1 year old.,/images/sam.jpg
+8,Simba,3,Cinnamon,Male,Yes,Simba is a very friendly kitty but not a fan of other cats.,/images/simba.jpg
+9,Chloe,3,Blue,Female,No,Chloe is a very friendly kitty.,/images/chloe.jpg
+10,Princess,2,Lilac ,Female,Yes,Princess is a two year old. She is a very sweet kitty in search of her forever home.,/images/princess.jpg
+11,Sophie,5,Cream,Female,No,Sophie is a very friendly kitty but needs to be the only cat. She is approximately 4-5 years old.,/images/sophie.jpg
+12,Shadow,4,Black,Male,Yes,Shadow is a very friendly kitty that likes to listen to music. ,/images/shadow.jpg
+13,Izzy,1,Black,Male,Yes,Izzy is very sweet and has come a long way. He seems to like other cats.,/images/izzy.jpg
+14,Cleo,2,Brown,Female,Yes,"She is the epitome of a cuddly feline friend, preferring to be right by your side for easy access loving!",/images/cleo.jpg
+15,Boots,5,Cream,Male,Yes,"Boots would like a quiet home, he is a bit shy, but he loves to be petted and brushed.",/images/boots.jpg
+16,Loki,3,Sable ,Male,Yes,"Loki is quite shy but nothing says ""be my friend"" quite like some cat treats! ",/images/loki.jpg
+17,Daisy,4,Brown ,Female,No,"Daisy is very sweet kitty that is just off balance when walking. Daisy can get around fine, it just takes her a little longer. ",/images/daisy.jpg
+18,Cooper,1,White,Female,Yes,Cooper is a pretty young lady who is sweet and a little shy but she warms right up when she gets to know you.,/images/cooper.jpg
+19,Oreo,3,Cream,Male,Yes,"I'm a 3year old calico cat who loves to lounge the day away. You could call me in independent cat who is quiet, and laid back.",/images/oreo.jpg
+20,Tiger,6,Blue,Male,Yes,Tiger is very friendly and looking for his forever home.,/images/tiger.jpg
+21,Jasmine,5,Lilac ,Female,Yes,Jasmine is very friendly. She is Fiv+ but don't let that deter you.,/images/jasmine.jpg
+22,Pepper,1,Chocolate,Female,Yes,Pepper is a very sweet cat and would make a perfect lap cat.,/images/pepper.jpg
+23,Fiona,1,Blue,Female,No,Fiona is 1 year old and very friendly she loves to listen to music and to be sung to.,/images/fiona.jpg
+24,Jax,5,Brown,Male,Yes,Jax is a cute little guy that is a little shy upon first meeting. ,/images/jaxjpg
+25,Frank,2,White,Male,Yes,Frank isn't fond of being picked up and can get a little overwhelmed when you overstimulate petting him.,/images/frank.jpg
+26,Romeo,3,Sable ,Male,Yes,"Romeo is approximately 2-3 years old, needs home with no young children. Gets along with other cats.",/images/romeo
