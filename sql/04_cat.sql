@@ -7,8 +7,8 @@ CREATE TABLE `cat` (
   `neutered` varchar(10) NOT NULL,
   `description` varchar(3000) NOT NULL,
   `picture_path` varchar(3000) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `cat_arrival` varchar(45) NOT NULL,
-  `temp_home_id` int NOT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `cat_arrival` varchar(45) DEFAULT NULL,
+  `temp_home_id` int DEFAULT NULL,
   PRIMARY KEY (`cat_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
