@@ -17,9 +17,12 @@ public class Cat {
     private Integer age;
     private String color;
     private String sex;
-    private String nutured;
+    private String neutered;
     private String description;
     private String picturePath;
+    private String catStatus;
+    private String catArrival;
+    private int tempHomeId;
 
 
     @SneakyThrows
@@ -30,9 +33,12 @@ public class Cat {
                 rs.getInt("cat_age"),
                 rs.getString("cat_color"),
                 rs.getString("cat_sex"),
-                rs.getString("nutured"),
+                rs.getString("neutered"),
                 rs.getString("description"),
-                rs.getString("picture_path"));
+                rs.getString("picture_path"),
+                rs.getString("status"),
+                rs.getString("cat_arrival"),
+                rs.getInt("temp_home_id"));
 
         return cat;
     }

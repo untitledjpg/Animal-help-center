@@ -17,7 +17,7 @@ public class DatabaseManager {
         try {
             var con = getConnection();
             var stmt = con.createStatement();
-            var rs = stmt.executeQuery("SELECT * FROM cats;");
+            var rs = stmt.executeQuery("SELECT * FROM cat;");
 
             while (rs.next()) { //while there are still more records
 
