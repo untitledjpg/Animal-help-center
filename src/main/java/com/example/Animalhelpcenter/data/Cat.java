@@ -2,27 +2,44 @@ package com.example.Animalhelpcenter.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
+import javax.persistence.*;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name="cat")
 public class Cat {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cat_id")
     private Integer id;
+    @Column(name = "cat_name")
     private String name;
+    @Column(name = "cat_age")
     private Integer age;
+    @Column(name = "cat_color")
     private String color;
+    @Column(name = "cat_sex")
     private String sex;
+    @Column(name = "neutered")
     private String neutered;
+    @Column(name = "description")
     private String description;
+    @Column(name = "picture_path")
     private String picturePath;
+    @Column(name = "status")
     private String catStatus;
+    @Column(name = "cat_arrival")
     private String catArrival;
-    private int tempHomeId;
+    @Column(name = "temp_home_id")
+    private Integer tempHomeId;
 
 
     @SneakyThrows

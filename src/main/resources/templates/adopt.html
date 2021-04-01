@@ -10,27 +10,28 @@
 <form name="addAdoptionApplication" id="addAdoptionApplication" method ="post" action="/adopt">
     <div>
         <label>Name:</label>
-        <input type="text" name="name" id="name" maxlength="100">
+        <input type="text" name="name" id="name" maxlength="100" required>
     </div>
     <div>
         <label>Surname:</label>
-        <input type="text" name="surname" id="surname"  maxlength="100">
+        <input type="text" name="surname" id="surname"  maxlength="100" required>
     </div>
     <div>
         <label>Phone number:</label>
-        <input type="number" name="phoneNumber" id="phoneNumber" maxlength="100">
+        <input type="number" name="phoneNumber" id="phoneNumber" maxlength="100" required>
     </div>
     <div>
         <label>E-mail:</label>
-        <input type="text" name="email" id="email" maxlength="100">
+        <input type="email" name="email" id="email" maxlength="100" required>
     </div>
-    <div>
+    <!--<div>
         <label>Please choose a cat you would like to adopt:</label>
         <select name="catId" id="catId">
             <option value="">-</option>
             <option th:each="cat:${cats}" th:value="${cat.getId()}" th:text="${cat.getName()}"></option>
         </select>
-    </div>
+    </div>-->
+
     <div>
         <label>Do you have other pets at home?</label>
         <select name="otherPets" id="otherPets">
@@ -45,6 +46,9 @@
             <option value="no">no</option>
             <option value="yes">yes</option>
         </select>
+    </div>
+    <div>
+        <input type="hidden" name="catId" id="catId"  th:value="${id}" maxlength="100">
     </div>
     <input type="submit" value="Send application">
 </form>

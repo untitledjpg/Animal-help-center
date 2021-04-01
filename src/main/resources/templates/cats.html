@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats</title>
+
+
+</head>
+<style>
+    .images {
+        float:left;
+        border-style:solid;
+        border-width:3px;
+        border-color: #F9EBD2;
+        padding:20px;
+        margin:10px;
+        height:240px;
+        width:230px;
+        overflow:hidden;
+        text-align:center;
+    }
+
+    .text{
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+        font-family: Verdana,sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+</style>
+<body>
+<h1 th:align="center">Cats available for adoption</h1>
+
+    <div class="images" th:each="cat: ${cats}" >
+        <a th:text="${cat.getName()}" class="text"></a>
+        <img th:src="${cat.getPicturePath()}" width="210" height="210">
+        <a th:href="${'/adopt/' + cat.getId()}" class="text">Adopt</a>
+    </div>
+
+</body>
+</html>
