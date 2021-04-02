@@ -22,6 +22,6 @@ UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/tiger.jpg' WHERE 
 UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/jasmine.jpg' WHERE (`cat_id` = '21');
 UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/pepper.jpg' WHERE (`cat_id` = '22');
 UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/fiona.jpg' WHERE (`cat_id` = '23');
-UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/jaxjpg' WHERE (`cat_id` = '24');
+UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/jax.jpg' WHERE (`cat_id` = '24');
 UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/frank.jpg' WHERE (`cat_id` = '25');
-UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/romeo' WHERE (`cat_id` = '26');
+UPDATE `animalhelpcenter`.`cats` SET `picture_path` = '/images/romeo.jpg' WHERE (`cat_id` = '26');
