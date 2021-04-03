@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class AdminController {
+public class LoginController {
 
     private AdminRepository repo;
 
-    public AdminController() {
+    public LoginController() {
         repo = new AdminRepository();
     }
 
