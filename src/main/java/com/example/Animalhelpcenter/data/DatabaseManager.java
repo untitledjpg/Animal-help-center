@@ -68,6 +68,6 @@ public class DatabaseManager {
 
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connectionUrl, "test", "Test123");
+        return DriverManager.getConnection(connectionUrl, "Test", "Test123");
     }
 }
