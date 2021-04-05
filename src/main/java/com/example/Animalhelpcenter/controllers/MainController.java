@@ -53,11 +53,6 @@ public class MainController {
         return "app_sent";
     }
 
-    @GetMapping("/test")
-    public String getTest(Model model) {
-        return "test";
-    }
-
     @GetMapping("/faq")
     public String getFaq(Model model) {
         return "adoption_faq";
