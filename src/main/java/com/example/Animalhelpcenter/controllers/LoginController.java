@@ -21,7 +21,7 @@ public class LoginController {
         repo = new AdminRepository();
     }
 
-    @GetMapping("")
+    @GetMapping("/login")
     public String getLogin(Model model) {
         model.addAttribute("error", "");
         model.addAttribute("hasError", false);
@@ -29,7 +29,7 @@ public class LoginController {
     }
 
     //HttpSession session
-    @PostMapping("")
+    @PostMapping("/login")
     public String login(AdminLoginDto userData, Model model, HttpServletRequest request) {
 
         var user = repo.login(userData.getLogin(), userData.getPwd());

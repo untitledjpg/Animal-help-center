@@ -63,7 +63,7 @@ public class MainController {
         return "adoption_faq";
     }
 
-    @GetMapping("/index")
+    @GetMapping("")
     public String getIndex(Model model) {
         return "index";
     }
