@@ -19,11 +19,11 @@
         </property>
 
         <property name = "hibernate.connection.username">
-            Test
+            test
         </property>
 
         <property name = "hibernate.connection.password">
-            Test123
+            test123
         </property>
 
     </session-factory>

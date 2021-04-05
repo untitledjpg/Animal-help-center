@@ -1,60 +1,55 @@
 package com.example.Animalhelpcenter.controllers;
-import com.example.Animalhelpcenter.data.Admin;
-import com.example.Animalhelpcenter.data.AdminRepository;
-import com.example.Animalhelpcenter.mvc.AdminLoginDto;
-import com.example.Animalhelpcenter.session.SessionData;
+
+import com.example.Animalhelpcenter.data.Cat;
+import com.example.Animalhelpcenter.data.DatabaseHibernateManager;
+import com.example.Animalhelpcenter.data.DatabaseManager;
+import org.junit.Test;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import org.springframework.web.servlet.ModelAndView;
+
 @Controller
 public class AdminController {
+    DatabaseManager dm = new DatabaseManager();  //JDBC
+    DatabaseHibernateManager dhm = new DatabaseHibernateManager(); //hibernate
 
-    private AdminRepository repo;
 
-    public AdminController(){
-        repo = new AdminRepository();
+    @GetMapping("/admin/edit")                  // choose cat to edit page
+    public String manageCats(Model model){
+        //if user null access should be denied
+        var cats = dhm.getCats();
+        model.addAttribute("cats", cats);
+        return "choose_cat";
     }
 
-    @GetMapping("") //1 come to page
-    public String getIndex(Model model){
-        model.addAttribute("error", "");
-        model.addAttribute("hasError", false);
-        return "login";
-    }
-    //HttpSession session
+    @GetMapping("/admin/edit/{id}")             // edit specific cat
+    public String editCat(@PathVariable int id, Model model){
 
-    @PostMapping("") // 2 return, after posting data - error
-    public String login(AdminLoginDto userData, Model model, HttpServletRequest request) {    //same name as name of form
-
-        var user = repo.login(userData.getLogin(), userData.getPwd());
-        if (user == null){
-            model.addAttribute("error","Unable to login");
-            model.addAttribute("hasError", true);
-            return "login"; // redirect back to login
-        }
-        request.getSession().setAttribute(SessionData.User, user);
-
-        model.addAttribute("user", user);
-
-        return "admin";
-        //return "profile";
+        var cat = dhm.getById(id);
+        model.addAttribute("cat", cat);
+        return "edit_cat";
     }
 
-    @GetMapping("/profile")
-    public String getProfile(Model model, HttpSession session) { // can access with servlet request and session
-
-        var user = (Admin)session.getAttribute(SessionData.User); // SessionData.User (new class)
-        if (user == null){
-            return "access_denied";
-        }
-        //      session.setAttribute();  // to set something in session
-
-        model.addAttribute("user", user);
-        model.addAttribute("sessionId", session.getId());
-
-        return "profile";
+    @Test
+    public void getCatById(){
+        int id = 5;
+        var cat = dhm.getById(id);
+        System.out.println(cat.getName());
     }
+
+   /* @PostMapping("/admin/add")    // not ready yet
+    public ModelAndView saveApplication(@ModelAttribute("addCat") Cat dto) {
+
+
+        var cat = new Cat(0, dto.getName(), dto.getAge(), dto.getColor(),
+                dto.getSex(), dto.getNeutered(), dto.getDescription(), null,
+                dto.getCatStatus(), dto.getCatArrival(), dto.getTempHomeId());
+        dhm.save(cat);
+
+        return new ModelAndView("redirect:/app/sent"); // redirect
+    }*/
 }
