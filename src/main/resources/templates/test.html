@@ -6,34 +6,28 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 <link rel="stylesheet" href="styles.css">
-<style>
-    body, html {
-        height: 100%;
-        font-family: "Inconsolata", sans-serif;
-    }
 
-    .bgimg {
-
-        background-size: cover;
-
-        background-image: url("/images/remi.jpg");
-        min-height: 75%;
-    }
-
-</style>
 <style>
     .button {
         border: none;
         color: black;
-        padding: 15px 32px;
+        padding: 15px 40px;
         text-align: center;
-        text-decoration: none;
         display: inline-block;
         font-size: 30px;
         margin: 4px 2px;
         cursor: pointer;
+        font-family: "Inconsolata", sans-serif;
     }
 
+    .headbtn{
+        background-color: white;
+        padding: 5px 16px;
+        height: 100%;
+
+        font-size: 15px;
+        line-height: 1.5;
+    }
     .header { /*not used*/
         border: none;
         color: #E5D2B6;
@@ -46,33 +40,46 @@
         margin: 4px 2px;
         cursor: pointer;
     }
+
+    .top{
+        position: fixed;
+    }
+
+    body, html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+        background-size: cover;
+        background-image: url("/images/remi.jpg");
+        min-height: 75%;
+    }
+    .bg{
+        background-color: #fdf5e6!important;
+        font-size: 18px
+    }
 </style>
 <body>
 
 <!-- Links (sit on top) -->
-<div class="w3-top">
-    <div class="w3-row w3-padding w3-light-grey">
-
+<div class="top">
+    <div class="headbtn">
         <button onclick="location.href='/test'" type="button" class="button">HOME</button>
         <button onclick="location.href='/faq'" type="button" class="button">ADOPTION FAQ</button>
-        <button onclick="location.href='/adopt'" type="button" class="button">ADOPT</button>
+        <button onclick="location.href='/cats'" type="button" class="button">ADOPT</button>
         <button type="button" class="button">HAPPY ADOPTION STORIES</button>
         <button type="button" class="button">HOW TO HELP</button>
         <button type="button" class="button">CONTACTS</button>
-        <button onclick="location.href='/adopt'" type="button">
-            Test button
-        </button>
-
     </div>
 </div>
 
 <!-- Header with image ???????-->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small"></div>
-</header>
+<div class="bgimg " id="home">
+</div>
 
 <!-- Add a background color and large text to the whole page ?????-->
-<div class="w3-sand w3-grayscale w3-large">
+<div class="bg w3-grayscale w3-large">
 
     <!-- About Container -->
     <div class="w3-container" id="about">
@@ -106,8 +113,8 @@
             <form action="/action_page.php" target="_blank">
                 <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name">
                 </p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="e-mail" required
-                          name="People"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="e-mail" required
+                          name="Email"></p>
                 <!--                <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>-->
                 <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message " required
                           name="Message"></p>
@@ -118,6 +125,8 @@
         </div>
     </div>
 </div>
+
+
 
 </body>
 </html>

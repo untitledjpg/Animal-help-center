@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body class="editcattext">
+
+<form name="editCat" id="editCat" method ="post" >
+    <div>
+        <label>Name:</label>
+        <input class="input1" type="text" name="name" id="name" maxlength="100" required th:value="${cat.getName()}">
+    </div>
+    <div>
+        <label>Age:</label>
+        <input class="input1" type="text" name="age" id="age"  maxlength="100" required th:value="${cat.getAge()}">
+    </div>
+    <div>
+        <label>Color:</label>
+        <input class="input1" type="text" name="color" id="color" maxlength="100" required th:value="${cat.getColor()}">
+    </div>
+    <div>
+        <label>Sex:</label>
+        <input type="radio" id="sex"
+               name="sex" value="Male">
+        <label for="sex">Male</label>
+
+        <input type="radio" id="sex"
+               name="sex" value="Female">
+        <label for="sex">Female</label>
+    </div>
+    <div>
+        <label>Neutered:</label>
+        <input type="radio" id="neutered"
+               name="neutered" value="Yes">
+        <label for="neutered">Yes</label>
+
+        <input type="radio" id="neutered"
+               name="neutered" value="No">
+        <label for="neutered">No</label>
+    </div>
+    <div>
+        <label>Description:</label>
+        <input class="input1" type="text" name="description" id="description" maxlength="1000" required th:value="${cat.getDescription()}">
+    </div>
+    <div>
+        <label>Status:</label>
+        <input class="input1" type="email" name="catStatus" id="catStatus" maxlength="100" required th:value="${cat.getCatStatus()}">
+    </div>
+    <div>
+        <label>Cat arrival date:</label>
+        <input class="input1" type="date" name="catArrival" id="catArrival" maxlength="100" required th:value="${cat.getCatArrival()}">
+    </div>
+    <div>
+        <label>Temporary home id:</label>
+        <input class="input1" type="number" name="tempHomeId" id="tempHomeId" maxlength="100" th:value="${cat.getTempHomeId()}">
+    </div>
+    <div>
+        <label>Picture path:</label>
+        <input class="input1" type="text" name="picturePath" id="picturePath" maxlength="100" th:value="${cat.getPicturePath()}">
+    </div>
+    <div>
+        <input type="hidden" name="catId" id="catId"  th:value="${id}" maxlength="100">
+    </div>
+    <input type="submit" value="Save">
+
+
+</form>
+
+</body>
+</html>

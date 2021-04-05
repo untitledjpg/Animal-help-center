@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Cat help center Remi</title>
-</head>
-<body>
-<h1>Welcome to cat help center "Remi!"</h1>
-<ul>
-    <li th:each="cat: ${cats}" >
-        <a th:text="${cat.getName()}"></a>
-        <img th:src="${cat.getPicturePath()}" width="200" height="200">
-        <a href="/adopt">Adopt</a>
-    </li>
-    <!--    image path from database does not work -->
+<title>Kaķu palīdzības centrs REMI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
-</ul>
+<link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+<link href="/bootstrap/bootstrap.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="top" th:replace="/fragments.html :: header">
+</div>
+
+<!--
+<div class="top">
+    <div class="headbtn">
+        <button onclick="location.href='/test'" type="button" class="button">HOME</button>
+        <button onclick="location.href='/faq'" type="button" class="button">ADOPTION FAQ</button>
+        <button onclick="location.href='/cats'" type="button" class="button">ADOPT</button>
+        <button type="button" class="button">HAPPY ADOPTION STORIES</button>
+        <button type="button" class="button">HOW TO HELP</button>
+        <button type="button" class="button">CONTACTS</button>
+    </div>
+</div>-->
+
+<!-- Header with image ???????-->
+<div class="bgimg " id="home">
+</div>
+
+<!-- Add a background color and large text to the whole page ?????-->
+<div class="bg grayscale bodytext">
+
+    <!-- About Container -->
+    <div id="about">
+        <div class="content" style="max-width:800px">
+            <h5 class="h5"><span class="h5text" style="background-color: #E5D2B6">WELCOME TO CAT HELP CENTER "REMI"</span>
+            </h5>
+            <p style="text-align:justify"> Cat help center "REMI" was registered on February 12, 2021. Our main goals
+                are:
+                <br>1. Providing necessary assistance to stray and distressed animals.
+                <br>2. Providing animals with temporary home, food and veterinary assistance to look for permanent
+                homes.
+                <br>3. Control of the stray animal population by implementing the "catch-sterilize-release" program.
+                <br>4. Promoting public training on animal care, health, protection and welfare.
+                <br>5. Raising funds from natural and legal persons as donations or gifts for the maintenance and
+                treatment of animals.
+                <br>
+                <br>Some meet each other for life and become friends and family, others to come into each other's lives
+                for only a short time, to teach and remind us of how fragile life is, the importance of time, the
+                importance of compassion and ability to see what's going on around.
+            <br>
+            </p>
+            <div class="w3-panel w3-leftbar w3-light-grey"></div>
+
+        </div>
+    </div>
+
+    <!-- Contact Container -->
+<!--    <div class="w3-container" id="where" style="padding-bottom:32px;">
+        <div class="content" style="max-width:700px">
+
+            <h5 class="h5"><span class="h5text" style="background-color: #E5D2B6">CONTACT US</span>
+            </h5>
+            <form action="/action_page.php" target="_blank">
+                <p><input class="input" type="text" placeholder="Name" required name="Name">
+                </p>
+                <p><input class="input" type="text" placeholder="e-mail" required
+                          name="Email"></p>
+                &lt;!&ndash;                <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>&ndash;&gt;
+                <p><input class="input" type="text" placeholder="Message " required
+                          name="Message"></p>
+                <p>
+                    <button class="sendbtn w3-#E5D2B6" type="submit">SEND MESSAGE</button>
+                </p>
+            </form>
+        </div>
+    </div>-->
+</div>
+
 </body>
 </html>

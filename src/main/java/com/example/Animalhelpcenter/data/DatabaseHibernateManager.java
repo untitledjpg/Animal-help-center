@@ -101,4 +101,19 @@ public class DatabaseHibernateManager {
         }
     }
 
+    public Cat getById(int id){ // dont need transaction, because dont store data
+        // it's not generic, it can only return Country
+        // can use generic Class<T>?, because code is always the same for different classes
+        var session = factory.openSession(); //
+
+        try {
+            return session.get(Cat.class, id);
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return null; // was not able to find item by that id. could throw exception instead of null
+    }
+
 }

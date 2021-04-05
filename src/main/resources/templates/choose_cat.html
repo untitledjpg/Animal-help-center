@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Manage cats</title>
+</head>
+<body>
+
+<div class="bg bodytext" >
+    <h3 th:align="center">Manage cats</h3>
+    <div class="images"  th:each="cat: ${cats}" >
+        <a th:text="${cat.getName()}" class="text"></a>
+        <img th:src="${cat.getPicturePath()}" width="210" height="210">
+        <a th:href="${'/admin/edit/' + cat.getId()}" class="text">Edit</a>
+        <a th:href="${'/delete/' + cat.getId()}" class="text">Delete</a>
+    </div>
+</div>
+
+</body>
+</html>

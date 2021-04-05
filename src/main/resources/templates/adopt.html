@@ -2,55 +2,61 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+
     <title>Adopt</title>
 </head>
-<body>
-<h3>Please fill this application in order to adopt a cat</h3>
+<div class="top" th:replace="/fragments.html :: header">
+</div>
+<body class="bodycolor">
 
-<form name="addAdoptionApplication" id="addAdoptionApplication" method ="post" action="/adopt">
-    <div>
-        <label>Name:</label>
-        <input type="text" name="name" id="name" maxlength="100" required>
-    </div>
-    <div>
-        <label>Surname:</label>
-        <input type="text" name="surname" id="surname"  maxlength="100" required>
-    </div>
-    <div>
-        <label>Phone number:</label>
-        <input type="number" name="phoneNumber" id="phoneNumber" maxlength="100" required>
-    </div>
-    <div>
-        <label>E-mail:</label>
-        <input type="email" name="email" id="email" maxlength="100" required>
-    </div>
-    <!--<div>
-        <label>Please choose a cat you would like to adopt:</label>
-        <select name="catId" id="catId">
-            <option value="">-</option>
-            <option th:each="cat:${cats}" th:value="${cat.getId()}" th:text="${cat.getName()}"></option>
-        </select>
-    </div>-->
 
-    <div>
-        <label>Do you have other pets at home?</label>
-        <select name="otherPets" id="otherPets">
-            <option value="-">-</option>
-            <option value="cat/cats">cat/cats</option>
-            <option value="dog/dogs">dog/dogs</option>
-        </select>
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text">Fill the application in order to adopt a cat</span>
+    </h5>
+    <div class="content" style="max-width:700px">
+
+        <form name="addAdoptionApplication" id="addAdoptionApplication" method="post" action="/adopt" >
+            <div>
+                <label>Name:</label>
+                <input class="input" type="text" name="name" id="name" maxlength="100" required>
+            </div>
+            <div>
+                <label>Surname:</label>
+                <input class="input" type="text" name="surname" id="surname" maxlength="100" required>
+            </div>
+            <div>
+                <label>Phone number:</label>
+                <input class="input" type="number" name="phoneNumber" id="phoneNumber" maxlength="100" required>
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input class="input" type="email" placeholder="E-mail" name="email" id="email" maxlength="100" required>
+            </div>
+            <div>
+                <label>Do you have other pets at home?</label>
+                <select class="input" name="otherPets" id="otherPets">
+                    <option value="-">-</option>
+                    <option value="cat/cats">cat/cats</option>
+                    <option value="dog/dogs">dog/dogs</option>
+                </select>
+            </div>
+            <div>
+                <label>Do you have small children?</label>
+                <select class="input" name="children" id="children">
+                    <option value="no">no</option>
+                    <option value="yes">yes</option>
+                </select>
+            </div>
+            <div>
+                <input type="hidden" name="catId" id="catId" th:value="${id}" maxlength="100">
+            </div>
+            <input class="sendbtn" style="margin-top: 20px" type="submit" value="Send application">
+        </form>
     </div>
-    <div>
-        <label>Do you have small children?</label>
-        <select name="children" id="children">
-            <option value="no">no</option>
-            <option value="yes">yes</option>
-        </select>
-    </div>
-    <div>
-        <input type="hidden" name="catId" id="catId"  th:value="${id}" maxlength="100">
-    </div>
-    <input type="submit" value="Send application">
-</form>
+
+
 </body>
 </html>

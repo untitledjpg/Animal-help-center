@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="/bootstrap/bootstrap.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+
+<body>
+
+<div  th:fragment="header">
+    <div style="height: 69px;">
+<!--        justify-content-start-->
+        <button onclick="location.href='/index'" class="button btn-outline "  type="button">HOME</button>
+        <button onclick="location.href='/faq'" class="button btn-outline " type="button">ADOPTION FAQ</button>
+        <button onclick="location.href='/cats'" class="button btn-outline " type="button">ADOPT</button>
+        <button onclick="location.href='/index'" class="button btn-outline " type="button">HAPPY ADOPTION STORIES</button>
+        <button onclick="location.href='/help'" class="button btn-outline " type="button">HOW TO HELP</button>
+        <button onclick="location.href='/contacts'" class="button btn-outline " type="button">CONTACTS</button>
+    </div>
+</div>
+
+</body>
+</html>

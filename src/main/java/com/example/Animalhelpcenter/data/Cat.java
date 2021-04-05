@@ -8,6 +8,7 @@ import lombok.SneakyThrows;
 import javax.persistence.*;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -37,7 +38,7 @@ public class Cat {
     @Column(name = "status")
     private String catStatus;
     @Column(name = "cat_arrival")
-    private String catArrival;
+    private Date catArrival;
     @Column(name = "temp_home_id")
     private Integer tempHomeId;
 
@@ -54,7 +55,7 @@ public class Cat {
                 rs.getString("description"),
                 rs.getString("picture_path"),
                 rs.getString("status"),
-                rs.getString("cat_arrival"),
+                rs.getDate("cat_arrival"),
                 rs.getInt("temp_home_id"));
 
         return cat;
