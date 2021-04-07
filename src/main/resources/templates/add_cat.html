@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Add cat to Database</title>
+</head>
+<body>
+
+<div class="top" th:replace="/fragments.html :: admin-nav">
+</div>
+
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text">New Cat</span>
+    </h5>
+    <div class="content" style="max-width:700px">
+
+<form name="addCat" id="addCat" method ="post" action="/admin/add" style="font-size: 18px;">
+    <div>
+        <label>Name:</label>
+        <input class="input1" type="text" name="name" id="name" maxlength="100" required >
+    </div>
+    <div>
+        <label>Age:</label>
+        <input class="input1" type="text" name="age" id="age"  maxlength="100" required >
+    </div>
+    <div>
+        <label>Color:</label>
+        <input class="input1" type="text" name="color" id="color" maxlength="100" required >
+    </div>
+    <div>
+        <label>Sex:</label>
+        <input type="radio" id="sex"
+               name="sex" value="Male" required>
+        <label for="sex">Male</label>
+
+        <input type="radio" id="sex"
+               name="sex" value="Female" required>
+        <label for="sex">Female</label>
+    </div>
+    <div>
+        <label>Neutered:</label>
+        <input type="radio" id="neutered"
+               name="neutered" value="Yes" required>
+        <label for="neutered">Yes</label>
+
+        <input type="radio" id="neutered"
+               name="neutered" value="No" required>
+        <label for="neutered">No</label>
+    </div>
+    <div>
+        <label>Description:</label>
+        <input class="input1" type="text" name="description" id="description" maxlength="1000" required >
+    </div>
+    <div>
+        <label>Status:</label>
+        <input class="input1" type="email" name="catStatus" id="catStatus" maxlength="100"  >
+    </div>
+    <div>
+        <label>Cat arrival date:</label>
+        <input class="input1" type="date" name="catArrival" id="catArrival" maxlength="100" required >
+    </div>
+    <div>
+        <label>Temporary home id:</label>
+        <input class="input1" type="number" name="tempHomeId" id="tempHomeId" maxlength="100">
+    </div>
+    <div>
+        <label>Picture url ( You can use this website to generate url: https://www.linkpicture.com/en/index.php) :</label>
+        <input class="input1" type="text" name="picturePath" id="picturePath" maxlength="100"  >
+    </div>
+    <div>
+        <input type="hidden" name="catId" id="catId"  maxlength="100">
+    </div>
+    <input class="sendbtn" style="margin-top: 20px" type="submit" value="Save">
+</form>
+
+    </div>
+</div>
+</body>
+</html>

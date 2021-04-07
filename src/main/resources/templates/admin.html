@@ -2,15 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
     <title>Admin page</title>
 </head>
 <body class="bodycolor">
+
 <h1>Logged in as admin</h1>
 <h3>Database manager</h3>
-<div class="headbtn">
-    <button onclick="location.href='/admin/edit'" type="button" class="button">Edit cats</button>
-    <button onclick="location.href='/admin/insert'" type="button" class="button">Insert cat</button>
-</div>
+
+
+    <button onclick="location.href='/admin/edit'" type="button" class="button btn-outline ">Edit cats</button>
+    <button onclick="location.href='/admin/add'" type="button" class="button btn-outline " >Add new cat</button>
+    <button onclick="location.href='/admin/view-applications'" type="button" class="button btn-outline" >View adoption applications</button>
+    <button onclick="location.href='/logout'" type="button" class="button button-logout btn-outline" >Log out</button>
+
+
 </body>
 </html>

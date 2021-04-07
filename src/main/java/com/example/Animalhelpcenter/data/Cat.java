@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -41,6 +42,8 @@ public class Cat {
     private Date catArrival;
     @Column(name = "temp_home_id")
     private Integer tempHomeId;
+
+
 
 
     @SneakyThrows

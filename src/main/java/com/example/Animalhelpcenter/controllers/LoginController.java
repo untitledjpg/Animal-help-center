@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,11 +26,12 @@ public class LoginController {
     public String getLogin(Model model) {
         model.addAttribute("error", "");
         model.addAttribute("hasError", false);
+
         return "login";
     }
 
     //HttpSession session
-    @PostMapping("/login")
+    @PostMapping("/admin")
     public String login(AdminLoginDto userData, Model model, HttpServletRequest request) {
 
         var user = repo.login(userData.getLogin(), userData.getPwd());
@@ -59,6 +61,12 @@ public class LoginController {
         model.addAttribute("sessionId", session.getId());
 
         return "admin";
+    }
+
+    @GetMapping("/logout")
+    public ModelAndView logOut(HttpSession session){
+        session.setAttribute(SessionData.User, null);
+        return new ModelAndView("redirect:/");
     }
 }
 

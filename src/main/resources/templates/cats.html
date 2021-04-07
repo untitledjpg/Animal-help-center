@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>Adopt a cat</title>
 
 
@@ -16,52 +18,30 @@
 
 <body style="background-color: #efefef">
 
-<div class=" bodytext" >
+<div class=" bodytext">
 
-    <!--<div id="cats">
-
-        <h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd">CATS AVAILABLE FOR ADOPTION</span>
-        </h5>
-        <div class="images" style="height: 260px; border-color: #d8d4cd" th:each="cat: ${cats}" >
-            <a th:text="${cat.getName()}" class="text"></a>
-            <img th:src="${cat.getPicturePath()}" width="210" height="210">
-            <a th:href="${'/adopt/' + cat.getId()}" class="text">Adopt</a>
-        </div>
-
-        <div class="w3-panel w3-leftbar w3-light-grey"></div>
-    </div>-->
 
     <h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd">CATS AVAILABLE FOR ADOPTION</span>
     </h5>
 
-    <div style="float:left;
-         margin-left:2%;
-         margin-right: 2%;
-         margin-bottom: 20px;
-         width:300px;
-         height: 650px;
-text-align: justify;" th:each="cat: ${cats}">
-    <div class="card" style=" float:left; width: 18rem; height: 650px; " >
-        <img th:src="${cat.getPicturePath()}" class="images" style="width: 200px; height: 200px;
+    <div class="cats" th:each="cat: ${cats}">
+        <div class="card" style=" float:left; width: 18rem; height: 650px; ">
+            <img th:src="${cat.getPicturePath()}" class="images" style="width: 200px; height: 200px;
         margin-left: 20px; margin-top: 5px;" alt="...">
-        <div class="card-body">
-            <h5 class="catsheader"  th:text="${cat.getName()}"></h5>
-            <p class="card-text" th:text="${cat.getDescription()}"></p>
+            <div class="card-body">
+                <h5 class="catsheader" th:text="${cat.getName()}"></h5>
+                <p class="card-text" th:text="${cat.getDescription()}"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:text="${cat.getSex()}"></li>
+                <li class="list-group-item" th:text="'Age: ' + ${cat.getAge()} + ' year'"></li>
+                <li class="list-group-item" th:text="'Neutered: ' + ${cat.getNeutered()}"></li>
+                <li class="card-link list-group-item"><a th:href="${'/adopt/' + cat.getId()} ">Adopt</a></li>
+            </ul>
+
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" th:text="${cat.getSex()}"></li>
-            <li class="list-group-item" th:text="'Age: ' + ${cat.getAge()} + ' year'"></li>
-            <li class="list-group-item" th:text="'Neutered: ' + ${cat.getNeutered()}"></li>
-            <li class="card-link list-group-item"> <a th:href="${'/adopt/' + cat.getId()} ">Adopt</a></li>
-        </ul>
-        <!--<div class="card-body">
-            <a th:href="${'/adopt/' + cat.getId()} " class="card-link" style="text-align:center";>Adopt</a>
-        </div>-->
     </div>
 </div>
-</div>
-
-
 
 </body>
 </html>

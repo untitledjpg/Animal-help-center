@@ -1,12 +1,15 @@
 package com.example.Animalhelpcenter.data;
 
+import com.example.Animalhelpcenter.mvc.AdoptionApplicationDto;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DatabaseHibernateManager {
 
@@ -18,6 +21,7 @@ public class DatabaseHibernateManager {
                     .configure()
                     .addAnnotatedClass(Cat.class) //reads configuration of class
                     .addAnnotatedClass(AdoptionApplication.class)
+                    .addAnnotatedClass(AdoptionApplicationDto.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);
@@ -75,11 +79,34 @@ public class DatabaseHibernateManager {
     }
 
 
-    public void updateCat(Cat cat){ // check id, so that we don't use wrapper methods
-        if (cat.getId() == 0){ // if don't have specific item
+
+/*    public void update(Cat catToUpdate){ // important that item has id
+        var session = factory.openSession();
+
+        var name = newCat.getName();
+        var id = newCat.getId();
+        try {
+            String hql = "UPDATE Cat set name = :name "  +
+                    "WHERE id = :cat_id";
+            Query query = session.createQuery(hql);
+            query.setParameter("name", name);
+            query.setParameter("cat_id", id);
+            int result = query.executeUpdate();
+
+        } catch (HibernateException ex) {
+
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+    }*/
+
+
+    public void updateCat(Cat catToUpdate){ // check id, so that we don't use wrapper methods
+        if (catToUpdate.getId() == 0){ // if don't have specific item
             return;
         }
-        update(cat);
+        update(catToUpdate);
     }
 
     //delete deletes with instance of object, not just with id
@@ -115,5 +142,41 @@ public class DatabaseHibernateManager {
         }
         return null; // was not able to find item by that id. could throw exception instead of null
     }
+
+
+    public List<AdoptionApplicationDto> getApplications() {
+        var session = factory.openSession(); // opening channel to communicate with database
+
+        try {
+            var query = session.createQuery("SELECT A.id, C.name, A.name, A.surname, A.phoneNumber, A.email," +
+                    "A.catId, A.otherPets, A.children FROM AdoptionApplication A " +
+                    "left join Cat C ON C.id = A.catId");
+            var result = query.list().stream()
+                    .map(item->mapToAdoptionApplicationDto(item))
+                    .collect(Collectors.toList());
+
+            int a = 1;
+            return (ArrayList<AdoptionApplicationDto>)result;
+
+//            var result = query.list();
+//            return query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return new ArrayList<>();
+    }
+
+    private AdoptionApplicationDto mapToAdoptionApplicationDto(Object obj){
+        var row = (Object[]) obj;
+        return new AdoptionApplicationDto((Integer)row[0], (String)row[1], (String)row[2], (String)row[3], (Integer)row[4],
+        (String)row[5], (Integer)row[6], (String)row[7], (String)row[8]);
+    }
+
+    /*            return session.createQuery("FROM AdoptionApplication.id, Cat.name, AdoptionApplication.name," +
+                    " AdoptionApplication .surname, AdoptionApplication.phoneNumber, " +
+                    "AdoptionApplication.email, AdoptionApplication.catId, AdoptionApplication.otherPets," +
+                    "AdoptionApplication.children ").list();*/
 
 }

@@ -2,14 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>Manage cats</title>
 </head>
 <body>
 
-<div class="bg bodytext" >
-    <h3 th:align="center">Manage cats</h3>
-    <div class="images"  th:each="cat: ${cats}" >
+<div class="top" th:replace="/fragments.html :: admin-nav">
+</div>
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text">Edit cats</span>
+    </h5>
+    <div class="content" style="max-width:700px; ">
+    </div>
+</div>
+
+<div class="bg bodytext" style="margin-left: 2%; margin-right: 2%;">
+    <div class="images" th:each="cat: ${cats}" style="margin: 5px">
         <a th:text="${cat.getName()}" class="text"></a>
         <img th:src="${cat.getPicturePath()}" width="210" height="210">
         <a th:href="${'/admin/edit/' + cat.getId()}" class="text">Edit</a>
