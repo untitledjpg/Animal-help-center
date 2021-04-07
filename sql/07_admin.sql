@@ -9,4 +9,4 @@ CREATE TABLE `animalhelpcenter`.`admin` (
 INSERT INTO `animalhelpcenter`.`admin` (`admin_login`, `admin_password`) VALUES ('admin', 'admin123');
 
 
-UPDATE animalhelpcenter.admin SET admin_password = md5('test123') WHERE admin_id = 1;
+UPDATE animalhelpcenter.admin SET admin_password = md5('Test123') WHERE admin_id = 1;

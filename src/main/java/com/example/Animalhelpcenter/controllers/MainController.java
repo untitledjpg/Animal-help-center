@@ -47,7 +47,6 @@ public class MainController {
         return new ModelAndView("redirect:/app/sent"); // redirect
     }
 
-
     @GetMapping("/app/sent")
     public String getApplicationSentPage() {
         return "app_sent";

@@ -31,5 +31,4 @@ public class AdoptionApplication {
     private String otherPets;
     @Column(name = "children")
     private String children;
-
 }
