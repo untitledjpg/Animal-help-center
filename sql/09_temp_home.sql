@@ -1,0 +1,8 @@
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('1', 'Martha', 'Appleton', '28877544', 'martha.appleton@gmail.com', 'Brivibas street 366, Riga');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('2', 'Kris', 'Newman', '27782582', 'kris.newman@inbox.lv', 'Hanzas street 4, Riga');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('3', 'Samanta', 'Saule', '25888766', 'samanta.saule@inbox.lv', 'Vidus avenue 75, Jurmala');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('4', 'Anna', 'Bright', '29765213', 'anna.bright@gmail.com', 'Pleju street 32, Marupe');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('5', 'Mike', 'Kaufmann', '23556418', 'mike.kaufmann@gmail.com', 'Balasta damb 66A, Riga');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('6', 'Alan', 'Wind', '24118917', 'alan.wind@gmail.com', 'Gaismas street 13, Salaspils');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('7', 'John', 'Wood', '24118917', 'alan.wood@gmail.com', 'King street 187, Riga');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('8', 'Harry', 'Smith', '24121319', 'harry.smith@gmail.com', 'Queen avenue 66, Riga');

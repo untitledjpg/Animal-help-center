@@ -12,3 +12,6 @@ CREATE TABLE `cat` (
   `temp_home_id` int DEFAULT NULL,
   PRIMARY KEY (`cat_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+ALTER TABLE `animalhelpcenter`.`cat`
+    ADD COLUMN `volunteer_id` INT NULL AFTER `temp_home_id`;
