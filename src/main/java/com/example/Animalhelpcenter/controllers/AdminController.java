@@ -81,7 +81,7 @@ public class AdminController {
 
         var cat = new Cat(0, dto.getName(), dto.getAge(), dto.getColor(),
                 dto.getSex(), dto.getNeutered(), dto.getDescription(), dto.getPicturePath(),
-                dto.getCatStatus(), dto.getCatArrival(), dto.getTempHomeId());
+                dto.getCatStatus(), dto.getCatArrival(), dto.getTempHomeId(), dto.getVolunteerId());
         dhm.save(cat);
 
         return new ModelAndView("redirect:/admin/edit"); // redirect
