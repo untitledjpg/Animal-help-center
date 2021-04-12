@@ -54,6 +54,7 @@ public class AdminController {
         catToUpdate.setCatStatus(dto.getCatStatus());
         catToUpdate.setCatArrival(dto.getCatArrival());
         catToUpdate.setTempHomeId(dto.getTempHomeId());
+
 /*
         Cat newCat = new Cat(0, dto.getName(), dto.getAge(), dto.getColor(),
                 dto.getSex(), dto.getNeutered(), dto.getDescription(), dto.getPicturePath(),

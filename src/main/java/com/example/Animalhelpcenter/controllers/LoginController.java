@@ -31,7 +31,7 @@ public class LoginController {
     }
 
     //HttpSession session
-    @PostMapping("/admin")
+    @PostMapping("/login")
     public String login(AdminLoginDto userData, Model model, HttpServletRequest request) {
 
         var user = repo.login(userData.getLogin(), userData.getPwd());
