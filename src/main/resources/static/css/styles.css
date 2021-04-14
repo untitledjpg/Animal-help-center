@@ -122,6 +122,12 @@
     line-height: initial !important;
 }
 
+.button-delete{
+    background-color: #ffa1a1 !important;
+    position: relative;
+    left: 45%;
+}
+
 .button-logout{
     background-color: rgba(208, 137, 133, 0.82) !important;
 }
@@ -144,6 +150,33 @@
     font-size: 1rem;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.b {
+    border: 1px black;
+    border-radius: 8px;
+    color: black;
+    padding: 15px 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    margin-left: 140px;
+    cursor: pointer;
+    font-family: "Inconsolata", sans-serif;
+    line-height: initial !important;
+}
+
+.b-o {
+    background-color: #e9e6df;
+    color: #8d7c64;
+    border-color: #d4c112;
+}
+
+.b-admin{
+    display: flow-root;
+    width: 300px;
+    margin: 10px;
 }
 
 .btn-outline {
@@ -190,7 +223,7 @@
     margin-right: 2%;
     margin-bottom: 20px;
     width: 300px;
-    height: 650px;
+    height: 700px;
     text-align: justify;
 }
 

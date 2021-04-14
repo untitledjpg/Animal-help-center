@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
 <head>
     <meta charset="UTF-8">
     <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
@@ -22,9 +23,12 @@
 </div>
 
 <div>
+
+    <form action="/admin/delete/app/" method="get">
     <table class="table table-striped">
         <thead>
         <tr>
+            <th scope="col"></th>
             <th scope="col">#</th>
             <th scope="col">Cat Id</th>
             <th scope="col">Cat Name</th>
@@ -34,11 +38,19 @@
             <th scope="col">Email</th>
             <th scope="col">Other pets</th>
             <th scope="col">Small children</th>
+
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="apl:${apls}">
 
+            <td>
+                <div class="radio">
+                    <label><input type="radio" id='selectedApp' name="selectedApp"
+                                  th:value="${apl.getId()}" ></label>
+                </div>
+            </td>
             <td th:text="${apl.getId()}"></td>
             <td th:text="${apl.getCatId()}"></td>
             <td th:text="${apl.getCatName()}"></td>
@@ -53,7 +65,11 @@
 
         </tbody>
     </table>
+        <button type="submit" class="button btn-outline button-delete">Accept</button>
+    </form>
 </div>
+
+
 
 </body>
 </html>

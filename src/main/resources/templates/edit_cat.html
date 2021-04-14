@@ -35,21 +35,21 @@
             <div>
                 <label>Sex:</label>
                 <input type="radio" id="sex"
-                       name="sex" value="Male" required>
+                       name="sex" value="Male" th:checked="${cat.getSex() == 'Male'} ? 'checked'" required>
                 <label for="sex">Male</label>
 
                 <input type="radio" id="sex"
-                       name="sex" value="Female" required>
+                       name="sex" value="Female" th:checked="${cat.getSex() == 'Female'} ? 'checked'" required>
                 <label for="sex">Female</label>
             </div>
             <div>
                 <label>Neutered:</label>
                 <input type="radio" id="neutered"
-                       name="neutered" value="Yes" required>
+                       name="neutered" value="Yes" th:checked="${cat.getNeutered() == 'Yes'} ? 'checked'" required>
                 <label for="neutered">Yes</label>
 
                 <input type="radio" id="neutered"
-                       name="neutered" value="No" required>
+                       name="neutered" value="No" th:checked="${cat.getNeutered() == 'No'} ? 'checked'" required>
                 <label for="neutered">No</label>
             </div>
             <div>
@@ -80,7 +80,9 @@
             <div>
                 <input type="hidden" name="id" id="id" th:value="${id}" maxlength="100">
             </div>
-            <input type="submit" value="Save">
+ <!--           <input type="submit" value="Save">-->
+            <button type="submit" class="button btn-outline ">Save</button>
+            <button type="button" onclick="location.href='/admin/edit'" class="button btn-outline ">Back</button>
 
 
         </form>

@@ -24,19 +24,20 @@
     <h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd">CATS AVAILABLE FOR ADOPTION</span>
     </h5>
 
-    <div class="cats" th:each="cat: ${cats}">
-        <div class="card" style=" float:left; width: 18rem; height: 650px; ">
-            <img th:src="${cat.getPicturePath()}" class="images" style="width: 200px; height: 200px;
-        margin-left: 20px; margin-top: 5px;" alt="...">
+    <div class="cats" th:each="cat: ${cats}" th:if="${cat.getCatStatus()== 'available'}">
+        <div class="card" style=" float:left; width: 18rem; height: 700px; ">
+            <img th:src="${cat.getPicturePath()}" class="images" style="width: 200px !important; height: 200px!important;
+        margin-left: 20px; margin-top: 5px;" >
+
             <div class="card-body">
                 <h5 class="catsheader" th:text="${cat.getName()}"></h5>
                 <p class="card-text" th:text="${cat.getDescription()}"></p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item" th:text="${cat.getSex()}"></li>
-                <li class="list-group-item" th:text="'Age: ' + ${cat.getAge()} + ' year'"></li>
+                <li class="list-group-item" th:text="'Age: ' + ${cat.getAge()} + ' year' "></li>
                 <li class="list-group-item" th:text="'Neutered: ' + ${cat.getNeutered()}"></li>
-                <li class="card-link list-group-item"><a th:href="${'/adopt/' + cat.getId()} ">Adopt</a></li>
+                <li class="card-link list-group-item"><a th:href="${'/adopt/' + cat.getId()}">Adopt</a></li>
             </ul>
 
         </div>
