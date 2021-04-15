@@ -1,4 +1,4 @@
-package com.example.Animalhelpcenter.mvc;
+package com.example.Animalhelpcenter.dto;
 
 
 import lombok.AllArgsConstructor;

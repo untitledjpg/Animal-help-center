@@ -1,6 +1,10 @@
-package com.example.Animalhelpcenter.data;
+package com.example.Animalhelpcenter.repositories;
 
-import com.example.Animalhelpcenter.mvc.AdoptionApplicationDto;
+import com.example.Animalhelpcenter.data.AdoptionApplication;
+import com.example.Animalhelpcenter.data.Cat;
+import com.example.Animalhelpcenter.data.TempHome;
+import com.example.Animalhelpcenter.data.Volunteer;
+import com.example.Animalhelpcenter.dto.AdoptionApplicationDto;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

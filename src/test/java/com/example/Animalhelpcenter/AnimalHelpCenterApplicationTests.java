@@ -1,6 +1,6 @@
 package com.example.Animalhelpcenter;
 
-import com.example.Animalhelpcenter.data.DatabaseHibernateManager;
+import com.example.Animalhelpcenter.repositories.DatabaseHibernateManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

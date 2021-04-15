@@ -1,4 +1,5 @@
-package com.example.Animalhelpcenter.data;
+package com.example.Animalhelpcenter.repositories;
+import com.example.Animalhelpcenter.data.Admin;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

@@ -1,8 +1,8 @@
 package com.example.Animalhelpcenter.controllers;
 
 import com.example.Animalhelpcenter.data.Admin;
-import com.example.Animalhelpcenter.data.AdminRepository;
-import com.example.Animalhelpcenter.mvc.AdminLoginDto;
+import com.example.Animalhelpcenter.repositories.AdminRepository;
+import com.example.Animalhelpcenter.dto.AdminLoginDto;
 import com.example.Animalhelpcenter.session.SessionData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +27,7 @@ public class LoginController {
         model.addAttribute("error", "");
         model.addAttribute("hasError", false);
 
-        return "login";
+        return "/admin/login";
     }
 
     //HttpSession session
@@ -39,14 +39,14 @@ public class LoginController {
         if (user == null) {
             model.addAttribute("error", "Unable to login");
             model.addAttribute("hasError", true);
-            return "login";
+            return "/admin/login";
         }
 
         request.getSession().setAttribute("User", user);
 
         model.addAttribute("user", user);
 
-        return "admin";
+        return "/admin/admin";
     }
 
     @GetMapping("/admin")
@@ -54,13 +54,13 @@ public class LoginController {
 
         var user = (Admin) session.getAttribute(SessionData.User);
         if (user == null) {
-            return "access_denied";
+            return "info/access_denied";
         }
 
         model.addAttribute("user", user);
         model.addAttribute("sessionId", session.getId());
 
-        return "admin";
+        return "/admin/admin";
     }
 
     @GetMapping("/logout")

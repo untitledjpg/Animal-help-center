@@ -1,4 +1,7 @@
-package com.example.Animalhelpcenter.data;
+package com.example.Animalhelpcenter.repositories;
+
+import com.example.Animalhelpcenter.data.AdoptionApplication;
+import com.example.Animalhelpcenter.data.Cat;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -68,6 +71,6 @@ public class DatabaseManager {
 
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connectionUrl, "Test", "Test123");
+        return DriverManager.getConnection(connectionUrl, "test", "test123");
     }
 }

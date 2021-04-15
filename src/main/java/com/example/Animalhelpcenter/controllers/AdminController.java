@@ -1,7 +1,9 @@
 package com.example.Animalhelpcenter.controllers;
 
 import com.example.Animalhelpcenter.data.*;
-import com.example.Animalhelpcenter.mvc.SelectAppModel;
+import com.example.Animalhelpcenter.dto.SelectAppModel;
+import com.example.Animalhelpcenter.repositories.DatabaseHibernateManager;
+import com.example.Animalhelpcenter.repositories.DatabaseManager;
 import com.example.Animalhelpcenter.session.SessionData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +26,7 @@ public class AdminController {
         var cats = dhm.getCats();
         model.addAttribute("cats", cats);
 
-        return checkUser(session , "choose_cat");
+        return checkUser(session , "/admin/choose_cat");
     }
 
     @GetMapping("/admin/edit/{id}")             // edit specific cat
@@ -34,7 +36,7 @@ public class AdminController {
         model.addAttribute("cat", cat);
         model.addAttribute("id", id);
 
-        return checkUser(session , "edit_cat");
+        return checkUser(session , "/admin/edit_cat");
     }
 
     @PostMapping("/admin/edit")
@@ -50,7 +52,7 @@ public class AdminController {
         var cats = dhm.getCats();
         model.addAttribute("cats", cats);
 
-        return checkUser(session , "add_cat");
+        return checkUser(session , "/admin/add_cat");
     }
 
     @PostMapping("/admin/add")
@@ -99,14 +101,14 @@ public class AdminController {
         model.addAttribute("apls", apls);
         model.addAttribute("selectedApp", aplId);
 
-        return checkUser(session , "view_apps");
+        return checkUser(session , "/admin/view_apps");
     }
 
     @GetMapping("/admin/delete/app")
     public ModelAndView deleteApp(@RequestParam int selectedApp) {
 
         dhm.deleteApp(selectedApp);
-        return new ModelAndView("redirect:/admin/view-applications");
+        return new ModelAndView("redirect:/admin/view/applications");
     }
 
     @GetMapping("/admin/view/volunteers")
@@ -115,7 +117,7 @@ public class AdminController {
         var volunteers = dhm.getVolunteers();
         model.addAttribute("volunteers", volunteers);
 
-        return checkUser(session , "volunteers");
+        return checkUser(session , "/admin/volunteers");
     }
 
     @GetMapping("/admin/delete/volunteer")
@@ -133,7 +135,7 @@ public class AdminController {
         var homes = dhm.getTempHomes();
         model.addAttribute("homes", homes);
 
-        return checkUser(session , "temp_homes");
+        return checkUser(session , "/admin/temp_homes");
     }
 
     @GetMapping("/admin/delete/home")
@@ -148,7 +150,7 @@ public class AdminController {
     private String checkUser(HttpSession session, String templateName) {
         var user = (Admin) session.getAttribute(SessionData.User);
         if (user == null) {
-            return "access_denied";
+            return "info/access_denied";
         }
         return templateName;
     }
