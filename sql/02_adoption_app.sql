@@ -13,6 +13,6 @@ CREATE TABLE `animalhelpcenter`.`adoption_app`
     CONSTRAINT `cat_id_fk`
         FOREIGN KEY (`cat_id`)
             REFERENCES `animalhelpcenter`.`cat` (`cat_id`)
-            ON DELETE CASCADE
-            ON UPDATE CASCADE
+            ON DELETE NO ACTION
+            ON UPDATE CASCADE;
 );
