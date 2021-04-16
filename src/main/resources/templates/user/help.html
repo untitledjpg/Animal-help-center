@@ -2,62 +2,155 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>How to help?</title>
 </head>
 <body class="bodycolor">
-
 <div class="top" th:replace="/fragments.html :: header">
 </div>
-
-<h2>Meet our volunteers and become one of them!</h2>
-
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="max-width:800px; margin: auto" >
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd; ">HOW CAN YOU SUPPORT US?</span>
+</h5>
+<div style="width: 600px; float: left; margin-left: 5%">
+    <button class="accordion" style="  margin-top: 20px">🐾 Become a volunteer at the shelter</button>
+    <div class="panel">
+        <p><strong>Terms and conditions for the volunteer cat keeper's assistant</strong>:
+            <br>• The assistant must be at least 14 years of age;
+            <br>• Assistants aged 10 to 14 can come only if accompanied by their parents;
+            <br>• The first visit must be coordinated with the shelter administration;
+            <br>• A minor (under 18 years of age) must take a signed approval of their parents that they are aware of the work in the shelter and the risks involved;
+            <br>
+            <br><strong>The duties of a keeper's assistant include:</strong>
+            <br>• Washing the cages, washing the walls, floors and windows, combing and washing the cats and other tasks ordered by the keeper.
+            <br>• The work starts at 8AM and ends on working days at 5PM, on weekends at 4PM. Volunteers are not allowed to be on the shelter premises outside the working hours; each volunteer has his/her own individual working timetable given, based on the needs of the shelter animals;
+            <br>• On arrival,the shelter staff has to be informed, it is not allowed to start work without the keeper's or veterinarian's permission;
+            <br>• If necessary, do not hesitate to ask for help or information to the shelter staff.
+        </p>
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="/images/v-alise.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Alise</h5>
-                <p>Alise had joined us a long time before center registration.
-                She works in pet store and is a pro in cat nutrition questions.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/images/v-anna.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Anna</h5>
-                <p>Anna is currently studying to be a veterinarian. She helps to determine
-                what kind of medical help cats need.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/images/v-linda.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Linda and Laura</h5>
-                <p>Two dedicated sisters that help us in the center.</p>
-            </div>
-        </div>
+    <button class="accordion">🐾 Provide a temporary home</button>
+    <div class="panel">
+        <p><strong>How fostering helps animals:</strong>
+            <br>• It helps to play a vital part in the rehabilitation of cats and helps improve their chance of finding a new home.
+            <br>• Many cats that we take in have either suffered or are not used to the care and affection that they deserved.
+            <br>• Living with a foster family helps to provide them with one-to-one care, allowing them to build up their confidence and get used to a normal lifestyle.
+            <br>• Other cats don't cope well in an animal centre environment, or need to remain in our care for a long period of time whilst legal proceedings take place. This is where we need fosters to take them in to provide them with a real home, even if it is only on a temporary basis.
+            <br>
+            <br> <strong>How fostering helps you:</strong>
+            <br>• It's rewarding to know that you played a key part in helping a rescued animal recover from a life of suffering and start a new life.
+            <br>• You'll get to meet and care for animals with unique personalities and see them rehomed to a new family.
+            <br>• Fostering also gives people who would normally be unable to take in an animal long term, due to other commitments, with an alternative.
+        </p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    <button class="accordion">🐾 Donate</button>
+    <div class="panel">
+        <br>
+        <p> Your donations will be used to help cover the costs of daily operations, supplies, staff training, animal housing upgrades, community outreach programs, animal enrichment and much more.
+            <br>
+            <br> <strong>You can also donate:</strong>
+            <br>• Unopened food or treats;
+            <br>• Leashes, collars and harnesses;
+            <br>• Sturdy toys;
+            <br>• Sheets, blankets or towels;
+            <br>• Grooming supplies;
+            <br>• Organization and cleaning supplies;
+            <br>• Metal crates or carriers;
+            <br>• Flea and tick treatments.
+            <br>
+            <button class="donate_btn donate_btn_outline">CLICK TO DONATE</button>
+        </p>
+    </div>
 </div>
-
-
-
-
+<div style="margin-right: 5%;margin-left: 750px;position: fixed;">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+         style="width: 700px; margin-top: 20px">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/v-alise.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Alise</h5>
+                    <p>Alise had joined us a long time before center registration.
+                        She works in pet store and is a pro in cat nutrition questions.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/v-anna.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Anna</h5>
+                    <p>Anna is currently studying to be a veterinarian. She helps to determine
+                        what kind of medical help cats need.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/v-linda.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Linda and Laura</h5>
+                    <p>Two dedicated sisters that help us in the center.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <style>
+        .accordion {
+            background-color: #ffffff;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            text-align: center;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            margin: 10px;
+            width: 100%;
+            border-radius: 4px;
+        }
+        .active, .accordion:hover {
+            background-color: #e9e6df;
+        }
+        .panel {
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            width: 100%;
+            margin-left: 10px;
+        }
+    </style>
+    </head>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</div>
 </body>
 </html>
