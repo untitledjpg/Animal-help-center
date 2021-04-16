@@ -35,7 +35,7 @@ public class DatabaseHibernateManager {
     }
 
     public List<Cat> getCats() {
-        var session = factory.openSession(); // opening channel to communicate with database
+        var session = factory.openSession();
 
         try {
             return session.createQuery("FROM Cat").list();
@@ -145,22 +145,35 @@ public class DatabaseHibernateManager {
         }
     }
 
-    public List<AdoptionApplicationDto> getApplications() {
+//    public List<AdoptionApplicationDto> getApplications() {
+//        var session = factory.openSession(); // opening channel to communicate with database
+//
+//        try {
+//            var query = session.createQuery("SELECT A.id, C.name, A.name, A.surname, A.phoneNumber, A.email," +
+//                    "A.catId, A.otherPets, A.children FROM AdoptionApplication A " +
+//                    "left join Cat C ON C.id = A.catId");
+//            var result = query.list().stream()
+//                    .map(item->mapToAdoptionApplicationDto(item))
+//                    .collect(Collectors.toList());
+//
+//            int a = 1;
+//            return (ArrayList<AdoptionApplicationDto>)result;
+//
+////            var result = query.list();
+////            return query.list();
+//        } catch (HibernateException ex) {
+//            System.err.println(ex);
+//        } finally {
+//            session.close();
+//        }
+//        return new ArrayList<>();
+//    }
+
+    public List<AdoptionApplication> getApplicationsWithCat() {
         var session = factory.openSession(); // opening channel to communicate with database
 
         try {
-            var query = session.createQuery("SELECT A.id, C.name, A.name, A.surname, A.phoneNumber, A.email," +
-                    "A.catId, A.otherPets, A.children FROM AdoptionApplication A " +
-                    "left join Cat C ON C.id = A.catId");
-            var result = query.list().stream()
-                    .map(item->mapToAdoptionApplicationDto(item))
-                    .collect(Collectors.toList());
-
-            int a = 1;
-            return (ArrayList<AdoptionApplicationDto>)result;
-
-//            var result = query.list();
-//            return query.list();
+            return session.createQuery("FROM AdoptionApplication ").list(); // from employee ENTITY!
         } catch (HibernateException ex) {
             System.err.println(ex);
         } finally {
@@ -169,11 +182,25 @@ public class DatabaseHibernateManager {
         return new ArrayList<>();
     }
 
-    private AdoptionApplicationDto mapToAdoptionApplicationDto(Object obj){
-        var row = (Object[]) obj;
-        return new AdoptionApplicationDto((Integer)row[0], (String)row[1], (String)row[2], (String)row[3], (Integer)row[4],
-                (String)row[5], (Integer)row[6], (String)row[7], (String)row[8]);
+
+    public AdoptionApplication getApplicationById(int id){
+        var session = factory.openSession();
+
+        try {
+            return session.get(AdoptionApplication.class, id);
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return null;
     }
+
+//    private AdoptionApplicationDto mapToAdoptionApplicationDto(Object obj){
+//        var row = (Object[]) obj;
+//        return new AdoptionApplicationDto((Integer)row[0], (String)row[1], (String)row[2], (String)row[3], (Integer)row[4],
+//                (String)row[5], (Integer)row[6], (String)row[7], (String)row[8]);
+//    }
 
     public void deleteApp(int id) {
         var session = factory.openSession();
@@ -197,7 +224,7 @@ public class DatabaseHibernateManager {
     }
 
     public List<Volunteer> getVolunteers() {
-        var session = factory.openSession(); // opening channel to communicate with database
+        var session = factory.openSession();
 
         try {
             return session.createQuery("FROM Volunteer").list();
@@ -209,9 +236,8 @@ public class DatabaseHibernateManager {
         return new ArrayList<>();
     }
 
-    public Volunteer getVolunteerById(int id){ // dont need transaction, because dont store data
-        // it's not generic, it can only return Country
-        // can use generic Class<T>?, because code is always the same for different classes
+    public Volunteer getVolunteerById(int id){
+
         var session = factory.openSession(); //
 
         try {
@@ -221,11 +247,11 @@ public class DatabaseHibernateManager {
         } finally {
             session.close();
         }
-        return null; // was not able to find item by that id. could throw exception instead of null
+        return null;
     }
 
     public List<TempHome> getTempHomes() {
-        var session = factory.openSession(); // opening channel to communicate with database
+        var session = factory.openSession();
 
         try {
             return session.createQuery("FROM TempHome ").list();
@@ -237,9 +263,8 @@ public class DatabaseHibernateManager {
         return new ArrayList<>();
     }
 
-    public TempHome getTempHomeById(int id){ // dont need transaction, because dont store data
-        // it's not generic, it can only return Country
-        // can use generic Class<T>?, because code is always the same for different classes
+    public TempHome getTempHomeById(int id){
+
         var session = factory.openSession(); //
 
         try {
@@ -249,6 +274,6 @@ public class DatabaseHibernateManager {
         } finally {
             session.close();
         }
-        return null; // was not able to find item by that id. could throw exception instead of null
+        return null;
     }
 }

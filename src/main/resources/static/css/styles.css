@@ -121,14 +121,60 @@
     line-height: initial !important;
 }
 
+.btn-table{
+    left: 33%;
+}
+
 .button-delete{
-    background-color: #ffa1a1 !important;
+    background-color: #a9817f !important;
     position: relative;
-    left: 45%;
+    color: white !important;
+}
+
+.button-delete:hover{
+    background-color: #88524e !important;
+}
+
+.button-edit{
+    background-color: #7fa3a9 !important;
+    position: relative;
+    color: white !important;
+}
+
+.button-edit:hover{
+    background-color: #537e85 !important;
+}
+
+.button-new{
+    background-color: #82a97f !important;
+    position: relative;
+    color: white !important;
+}
+
+.button-new:hover{
+    background-color: #4d794c !important;
+}
+
+.button-reject{
+    background-color: #a9917f !important;
+    position: relative;
+    color: white !important;
+}
+
+.button-reject:hover{
+    background-color: #998163 !important;
 }
 
 .button-logout{
-    background-color: rgba(208, 137, 133, 0.82) !important;
+    /*background-color: rgba(208, 137, 133, 0.82) !important;*/
+    border: 1px #9d5654 !important;
+    color: #9d5654 !important;
+}
+
+.button-logout:hover {
+    color: #a00505 !important;
+    background-color: #e99889 !important;
+    border-color: #9b2323 !important;
 }
 
 .btn {
@@ -181,7 +227,6 @@
 .btn-outline {
     background-color: #e9e6df;
     color: #8d7c64;
-    border-color: #d4c112;
 }
 .btn-outline:hover {
     color: #fff;
@@ -539,6 +584,21 @@ table {
     border-collapse: collapse;
 }
 
+.table-vol{
+    width: 50% !important;
+    margin-bottom: 1rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.table-adopt{
+    width: 70% !important;
+}
+
+.table-homes{
+    width: 70% !important;
+}
+
 .table {
     --bs-table-bg: transparent;
     --bs-table-striped-color: #212529;
@@ -547,7 +607,6 @@ table {
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
     --bs-table-hover-color: #212529;
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-    width: 70% !important;
     margin-bottom: 1rem;
     margin-left: 15%;
     margin-right: 15%;

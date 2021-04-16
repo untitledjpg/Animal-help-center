@@ -24,8 +24,8 @@
 
 <div>
 
-    <form action="/admin/delete/app/" method="get">
-    <table class="table table-striped">
+    <form action="/admin/applications/manage" method="get">
+    <table class="table table-striped table-adopt">
         <thead>
         <tr>
             <th scope="col"></th>
@@ -38,6 +38,8 @@
             <th scope="col">Email</th>
             <th scope="col">Other pets</th>
             <th scope="col">Small children</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
 
 
         </tr>
@@ -52,20 +54,28 @@
                 </div>
             </td>
             <td th:text="${apl.getId()}"></td>
-            <td th:text="${apl.getCatId()}"></td>
-            <td th:text="${apl.getCatName()}"></td>
+            <td th:text="${apl.getCat.getId()}"></td>
+            <td th:text="${apl.getCat.getName()}"></td>
             <td th:text="${apl.getName()}"></td>
             <td th:text="${apl.getSurname()}"></td>
             <td th:text="${apl.getPhoneNumber()}"></td>
             <td th:text="${apl.getEmail()}"></td>
             <td th:text="${apl.getOtherPets()}"></td>
             <td th:text="${apl.getChildren()}"></td>
+            <td th:text="${apl.getAppStatus()}"></td>
+            <td>
 
+            </td>
         </tr>
 
         </tbody>
     </table>
-        <button type="submit" class="button btn-outline button-delete">Accept</button>
+        <button type="submit" id='clickedButton' name="clickedButton"
+                value="accept" class="button btn-outline button-new btn-table">Accept</button>
+        <button type="submit" id='clickedButton' name="clickedButton"
+                value="reject" class="button btn-outline button-reject btn-table">Reject</button>
+        <button type="submit" id='clickedButton' name="clickedButton"
+                value="delete" class="button btn-outline button-delete btn-table">Delete</button>
     </form>
 </div>
 

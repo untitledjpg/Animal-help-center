@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Edit Volunteer</title>
+</head>
+<body>
+
+<div class="top" th:replace="/fragments.html :: admin-nav">
+</div>
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text" th:text="'Edit data for '+ ${volunteer.getName()}"> </span>
+    </h5>
+    <div class="content" style="max-width:700px">
+
+        <form name="editVolunteer" id="editVolunteer" method="post" action="/admin/volunteers/edit">
+            <div>
+                <label>Name:</label>
+                <input class="input1" type="text" name="name" id="name" maxlength="100" required
+                       th:value="${volunteer.getName()}">
+            </div>
+            <div>
+                <label>Surname:</label>
+                <input class="input1" type="text" name="surname" id="surname" maxlength="100" required
+                       th:value="${volunteer.getSurname()}">
+            </div>
+            <div>
+                <label>Phone number:</label>
+                <input class="input1" type="number" name="volunteerPhone" id="volunteerPhone" maxlength="100" required
+                       th:value="${volunteer.getVolunteerPhone()}">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input class="input1" type="email" name="volunteerEmail" id="volunteerEmail" maxlength="100" required
+                       th:value="${volunteer.getVolunteerEmail()}">
+            </div>
+
+            <div>
+                <input type="hidden" name="id" id="id" th:value="${id}" maxlength="100">
+            </div>
+            <!--           <input type="submit" value="Save">-->
+            <button type="submit" class="button btn-outline ">Save</button>
+            <button type="button" onclick="location.href='/admin/volunteers'" class="button btn-outline ">Back</button>
+
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

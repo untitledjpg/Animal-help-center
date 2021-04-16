@@ -25,10 +25,16 @@ public class AdoptionApplication {
     private Integer phoneNumber;
     @Column(name = "email")
     private String email;
-    @Column(name = "cat_id")
-    private Integer catId;
+//    @Column(name = "cat_id")
+//    private Integer catId;
     @Column(name = "other_pets")
     private String otherPets;
     @Column(name = "children")
     private String children;
+    @Column(name = "app_status")
+    private String appStatus;
+
+    @OneToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    @JoinColumn(name="cat_id", referencedColumnName = "cat_id", nullable = false)
+    private Cat cat;
 }

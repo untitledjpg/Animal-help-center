@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Edit Temporary Home</title>
+</head>
+<body>
+
+<div class="top" th:replace="/fragments.html :: admin-nav">
+</div>
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text" th:text="'Edit temporary home'"> </span>
+    </h5>
+    <div class="content" style="max-width:700px">
+
+        <form name="editHome" id="editHome" method="post" action="/admin/homes/edit">
+            <div>
+                <label>Name:</label>
+                <input class="input1" type="text" name="name" id="name" maxlength="100" required
+                       th:value="${home.getName()}">
+            </div>
+            <div>
+                <label>Surname:</label>
+                <input class="input1" type="text" name="surname" id="surname" maxlength="100" required
+                       th:value="${home.getSurname()}">
+            </div>
+            <div>
+                <label>Phone number:</label>
+                <input class="input1" type="number" name="phone" id="phone" maxlength="100" required
+                       th:value="${home.getPhone()}">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input class="input1" type="email" name="email" id="email" maxlength="100" required
+                       th:value="${home.getEmail()}">
+            </div>
+            <div>
+                <label>Address:</label>
+                <input class="input1" type="text" name="address" id="address" maxlength="100" required
+                       th:value="${home.getAddress()}">
+            </div>
+
+            <div>
+                <input type="hidden" name="id" id="id" th:value="${id}" maxlength="100">
+            </div>
+            <!--           <input type="submit" value="Save">-->
+            <button type="submit" class="button btn-outline ">Save</button>
+            <button type="button" onclick="location.href='/admin/homes'" class="button btn-outline ">Back</button>
+
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
