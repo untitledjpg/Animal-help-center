@@ -688,20 +688,24 @@ table {
 .donate_btn{
     border: 1px black;
     border-radius: 8px;
-    color: black;
+    color: white !important;
     padding: 15px 40px;
     text-align:justify;
     display: inline-block;
-    font-size: 30px;
-    margin: 10px 120px 3px;
+    font-size: 20px;
+    margin: 20px 160px 3px;
     cursor: pointer;
     font-family: "Inconsolata", sans-serif;
     line-height: initial !important;
 }
 .donate_btn_outline {
-    background-color: limegreen;
+    background-color: #82a97f;
     color: black;
     border-color: green;
+}
+
+.donate_btn_outline:hover{
+    background-color: #4d794c !important;
 }
 
 /*-------------------------------------------------------------------*/
