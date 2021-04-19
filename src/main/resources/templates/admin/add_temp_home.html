@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Add temporary home to Database</title>
+</head>
+<body>
+
+<div class="top" th:replace="/fragments.html :: admin-nav">
+</div>
+
+
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+    <h5 class="h5"><span class="h5text">New Cat</span>
+    </h5>
+    <div class="content" style="max-width:700px">
+
+        <form name="addTempHome" id="addTempHome" method ="post" action="/admin/homes/add" style="font-size: 18px;">
+            <div>
+                <label>Name:</label>
+                <input class="input1" type="text" name="name" id="name" maxlength="100" required >
+            </div>
+            <div>
+                <label>Surname:</label>
+                <input class="input1" type="text" name="surname" id="surname"  maxlength="100" required >
+            </div>
+            <div>
+                <label>Phone number:</label>
+                <input class="input1" type="number" name="phone" id="phone" maxlength="100" required >
+            </div>
+            <div>
+                <label>Email:</label>
+                <input class="input1" type="email" name="email" id="email" maxlength="1000" required >
+            </div>
+            <div>
+                <label>Address:</label>
+                <input class="input1" type="text" name="address" id="address" maxlength="100"  >
+            </div>
+            <div>
+                <input type="hidden" name="id" id="id" value="0" maxlength="100">
+            </div>
+            <input class="sendbtn" style="margin-top: 20px" type="submit" value="Save">
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

@@ -23,8 +23,8 @@
     <div class="images" th:each="cat: ${cats}" style="margin: 5px">
         <a th:text="${cat.getName()}" class="text"></a>
         <img th:src="${cat.getPicturePath()}" width="210" height="210">
-        <a th:href="${'/admin/edit/' + cat.getId()}" class="text">Details</a>
-        <a th:href="${'/admin/delete/' + cat.getId()}" class="text">Delete</a>
+        <a th:href="${'/admin/cats/edit/' + cat.getId()}" class="text">Details</a>
+        <a th:href="${'/admin/cats/delete/' + cat.getId()}" class="text">Delete</a>
     </div>
 </div>
 

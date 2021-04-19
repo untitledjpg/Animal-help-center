@@ -107,6 +107,14 @@
     border-radius: 0;
 }
 
+.app-sent{
+    margin:auto;
+    padding-block: 80px;
+    width: 850px;
+    text-align: center;
+
+}
+
 .button {
     border: 1px black;
     border-radius: 8px;

@@ -1,12 +1,14 @@
 package com.example.Animalhelpcenter;
 
-import com.example.Animalhelpcenter.repositories.DatabaseHibernateManager;
+import com.example.Animalhelpcenter.data.Cat;
+import com.example.Animalhelpcenter.data.Volunteer;
+import com.example.Animalhelpcenter.repositories.DatabaseManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class AnimalHelpCenterApplicationTests {
-	DatabaseHibernateManager dhm = new DatabaseHibernateManager();
+	DatabaseManager mng = new DatabaseManager();
 
 	@Test
 	void contextLoads() {
@@ -24,14 +26,14 @@ class AnimalHelpCenterApplicationTests {
 	@Test
 	public void getCatById() {
 		int id = 5;
-		var cat = dhm.getCatById(id);
+		Cat cat = (Cat) mng.getObject(Cat.class, id);
 		System.out.println(cat.getName());
 	}
 
 	@Test
 	public void getApplicationById() {
 		int id = 1;
-		var appl = dhm.getApplicationsWithCat();
+		var appl = mng.getApplications();
 		System.out.println(appl.get(0).getChildren());
 		System.out.println(appl.get(3).getCat().getName());
 	}
@@ -39,12 +41,23 @@ class AnimalHelpCenterApplicationTests {
 	@Test
 	public void updateCat() {
 		int id = 6;
-		var cat = dhm.getCatById(6);
+		Cat cat = (Cat) mng.getObject(Cat.class, id);
 		System.out.println(cat.getName() + " " + cat.getCatStatus());
 		cat.setCatStatus("adopted");
-		dhm.updateCat(cat);
+		mng.updateCat(cat);
 		System.out.println(cat.getName() + " " + cat.getCatStatus());
 
 	}
+
+	@Test
+	public void getObject(){ // WORKS!!!
+		Cat cat = (Cat) mng.getObject(Cat.class, 2);
+		System.out.println("cat: " + cat.getName());
+
+		Volunteer vol = (Volunteer) mng.getObject(Volunteer.class, 1);
+		System.out.println("volunteer: " + vol.getName());
+	}
+
+
 
 }

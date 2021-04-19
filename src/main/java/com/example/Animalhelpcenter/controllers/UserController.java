@@ -1,9 +1,7 @@
 package com.example.Animalhelpcenter.controllers;
 
-import com.example.Animalhelpcenter.data.AdoptionApplication;
-
+import com.example.Animalhelpcenter.data.Cat;
 import com.example.Animalhelpcenter.dto.AdoptionApplicationDto;
-import com.example.Animalhelpcenter.repositories.DatabaseHibernateManager;
 import com.example.Animalhelpcenter.repositories.DatabaseManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
-    DatabaseManager dm = new DatabaseManager();  //JDBC
-    DatabaseHibernateManager dhm = new DatabaseHibernateManager(); //hibernate
+    DatabaseManager mng = new DatabaseManager();
 
     @GetMapping("")
     public String getIndex(Model model) {
@@ -24,15 +21,15 @@ public class UserController {
     @GetMapping("/cats")
     public String getCats(Model model) {
 
-        var cats = dhm.getCats();
-        model.addAttribute("cats", cats);             //key, object
+        var cats = mng.getCats();
+        model.addAttribute("cats", cats);
         return "/user/cats";
     }
 
     @GetMapping("/adopt/{id}")
     public String getAdoptPage(@PathVariable int id, Model model) {
 
-        var cats = dhm.getCats();
+        Cat cats = (Cat) mng.getObject(Cat.class, id);
         model.addAttribute("cats", cats);
         model.addAttribute("id", id);
 
@@ -44,7 +41,7 @@ public class UserController {
 
         var app = new AdoptionApplicationDto(0, dto.getName(), dto.getSurname(), dto.getPhoneNumber(),
                 dto.getEmail(), dto.getCatId(), dto.getOtherPets(), dto.getChildren());
-        dhm.save(app);
+        mng.saveObject(app);
 
         return new ModelAndView("redirect:/app/sent"); // redirect
     }
