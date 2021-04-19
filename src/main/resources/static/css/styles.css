@@ -191,6 +191,16 @@
     border-color: #9b2323 !important;
 }
 
+.button-save{
+    margin-top: 10px;
+    background-color: #82a97f !important;
+    color: white !important;
+}
+
+.button-save:hover{
+    background-color: #4d794c !important;
+}
+
 .btn {
     display: inline-block;
     font-weight: 400;

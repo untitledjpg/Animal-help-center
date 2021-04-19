@@ -18,6 +18,11 @@ public class UserController {
         return "/user/index";
     }
 
+    @GetMapping("/faq")
+    public String getFaq(Model model) {
+        return "/user/adoption_faq";
+    }
+
     @GetMapping("/cats")
     public String getCats(Model model) {
 
@@ -51,14 +56,9 @@ public class UserController {
         return "/info/app_sent";
     }
 
-    @GetMapping("/contacts")
-    public String getContacts(Model model) {
-        return "/user/contacts";
-    }
-
-    @GetMapping("/faq")
-    public String getFaq(Model model) {
-        return "/user/adoption_faq";
+    @GetMapping("/stories")
+    public String getAdoptionStories() {
+        return "/user/stories";
     }
 
     @GetMapping("/help")
@@ -66,9 +66,9 @@ public class UserController {
         return "/user/help";
     }
 
-    @GetMapping("/stories")
-    public String getAdoptionStories() {
-        return "/user/stories";
+    @GetMapping("/contacts")
+    public String getContacts(Model model) {
+        return "/user/contacts";
     }
 }
 

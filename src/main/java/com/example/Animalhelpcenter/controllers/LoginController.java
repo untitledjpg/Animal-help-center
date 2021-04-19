@@ -30,7 +30,6 @@ public class LoginController {
         return "/admin/login";
     }
 
-    //HttpSession session
     @PostMapping("/login")
     public String login(AdminLoginDto userData, Model model, HttpServletRequest request) {
 
@@ -43,7 +42,6 @@ public class LoginController {
         }
 
         request.getSession().setAttribute("User", user);
-
         model.addAttribute("user", user);
 
         return "/admin/admin";
@@ -67,6 +65,14 @@ public class LoginController {
     public ModelAndView logOut(HttpSession session){
         session.setAttribute(SessionData.User, null);
         return new ModelAndView("redirect:/");
+    }
+
+    public String checkUser(HttpSession session, String templateName) {
+        var user = (Admin) session.getAttribute(SessionData.User);
+        if (user == null) {
+            return "info/access_denied";
+        }
+        return templateName;
     }
 }
 
