@@ -1,7 +1,7 @@
 CREATE TABLE `animalhelpcenter`.`admin` (
                                             `admin_id` INT NOT NULL AUTO_INCREMENT,
-                                            `admin_login` VARCHAR(100) NOT NULL,
-                                            `admin_password` VARCHAR(45) NOT NULL,
+                                            `admin_login` VARCHAR(60) NOT NULL,
+                                            `admin_password` VARCHAR(60) NOT NULL,
                                             PRIMARY KEY (`admin_id`));
 
 

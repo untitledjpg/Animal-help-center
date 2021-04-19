@@ -2,9 +2,9 @@ CREATE TABLE `animalhelpcenter`.`adoption_app`
 (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(60) NOT NULL,
-    `surname` VARCHAR(100) NOT NULL,
+    `surname` VARCHAR(60) NOT NULL,
     `phone_number` INT NOT NULL,
-    `email` VARCHAR(300) NOT NULL,
+    `email` VARCHAR(60) NOT NULL,
     `other_pets` VARCHAR(60) NOT NULL,
     `children` VARCHAR(60) NOT NULL,
     `cat_id` INT NOT NULL,
