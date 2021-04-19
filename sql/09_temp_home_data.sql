@@ -6,3 +6,4 @@ INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `
 INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('6', 'Alan', 'Wind', '24118917', 'alan.wind@gmail.com', 'Gaismas street 13, Salaspils');
 INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('7', 'John', 'Wood', '24118917', 'alan.wood@gmail.com', 'King street 187, Riga');
 INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('8', 'Harry', 'Smith', '24121319', 'harry.smith@gmail.com', 'Queen avenue 66, Riga');
+INSERT INTO `animalhelpcenter`.`temp_home` (`temp_home_id`, `name`, `surname`, `phone`, `email`, `address`) VALUES ('9', 'Cat', 'Center', '29999999', 'centrsremi@gmail.com', 'Brīvības street 999, Riga');
