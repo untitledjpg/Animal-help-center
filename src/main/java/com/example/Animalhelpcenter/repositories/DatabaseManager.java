@@ -115,14 +115,6 @@ public class DatabaseManager {
         return new ArrayList<>();
     }
 
-
-    public void updateCat(Cat catToUpdate){ // check id, so that we don't use wrapper methods
-        if (catToUpdate.getId() == 0){ // if don't have specific item
-            return;
-        }
-        updateObject(catToUpdate);
-    }
-
     public List<AdoptionApplication> getApplications() {
         var session = factory.openSession(); // opening channel to communicate with database
 
@@ -135,13 +127,6 @@ public class DatabaseManager {
         }
         return new ArrayList<>();
     }
-
-
-//    private AdoptionApplicationDto mapToAdoptionApplicationDto(Object obj){
-//        var row = (Object[]) obj;
-//        return new AdoptionApplicationDto((Integer)row[0], (String)row[1], (String)row[2], (String)row[3], (Integer)row[4],
-//                (String)row[5], (Integer)row[6], (String)row[7], (String)row[8]);
-//    }
 
     public List<Volunteer> getVolunteers() {
         var session = factory.openSession();

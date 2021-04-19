@@ -14,15 +14,6 @@ class AnimalHelpCenterApplicationTests {
 	void contextLoads() {
 	}
 
-//	@Test
-//	public void getApplications() {
-//		var apps = dhm.getApplications();
-//		for (var app : apps
-//		) {
-//			System.out.println(app.getName() + " " + app.getCatId() + " " + app.getCatName());
-//		}
-//	}
-
 	@Test
 	public void getCatById() {
 		int id = 5;
@@ -44,7 +35,7 @@ class AnimalHelpCenterApplicationTests {
 		Cat cat = (Cat) mng.getObject(Cat.class, id);
 		System.out.println(cat.getName() + " " + cat.getCatStatus());
 		cat.setCatStatus("adopted");
-		mng.updateCat(cat);
+		mng.updateObject(cat);
 		System.out.println(cat.getName() + " " + cat.getCatStatus());
 
 	}
@@ -57,7 +48,4 @@ class AnimalHelpCenterApplicationTests {
 		Volunteer vol = (Volunteer) mng.getObject(Volunteer.class, 1);
 		System.out.println("volunteer: " + vol.getName());
 	}
-
-
-
 }
