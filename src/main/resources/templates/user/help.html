@@ -11,13 +11,42 @@
     <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>How to help?</title>
 </head>
+
+<style>
+    .accordion {
+        background-color: #ffffff;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        text-align: center;
+        outline: none;
+        font-size: 18px;
+        transition: 0.4s;
+        margin: 10px;
+        width: 100%;
+        border-radius: 4px;
+    }
+    .active, .accordion:hover {
+        background-color: #e9e6df;
+    }
+    .panel {
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        width: 100%;
+        margin-left: 10px;
+    }
+</style>
+
 <body class="bodycolor">
 <div class="top" th:replace="/fragments.html :: header">
 </div>
 <h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd; ">HOW CAN YOU SUPPORT US?</span>
 </h5>
-<div style="width: 600px; float: left; margin-left: 5%">
-    <button class="accordion" style="  margin-top: 20px">🐾 Become a volunteer at the shelter</button>
+
+
+<div style="width: 600px; float: left; margin-left: 5%; ">
+    <button class="accordion" style="  margin-top: 20px">🐾 Become a volunteer at the center</button>
     <div class="panel">
         <p><strong>Terms and conditions for the volunteer cat keeper's assistant</strong>:
             <br>• The assistant must be at least 14 years of age;
@@ -79,15 +108,14 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/images/v-alise.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block carousel-background">
                     <h5>Alise</h5>
-                    <p>Alise had joined us a long time before center registration.
-                        She works in pet store and is a pro in cat nutrition questions.</p>
+                    <p>Alise works in pet store and is a pro in cat nutrition questions.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="/images/v-anna.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block carousel-background">
                     <h5>Anna</h5>
                     <p>Anna is currently studying to be a veterinarian. She helps to determine
                         what kind of medical help cats need.</p>
@@ -95,7 +123,7 @@
             </div>
             <div class="carousel-item">
                 <img src="/images/v-linda.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block carousel-background">
                     <h5>Linda and Laura</h5>
                     <p>Two dedicated sisters that help us in the center.</p>
                 </div>
@@ -110,31 +138,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <style>
-        .accordion {
-            background-color: #ffffff;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            text-align: center;
-            outline: none;
-            font-size: 18px;
-            transition: 0.4s;
-            margin: 10px;
-            width: 100%;
-            border-radius: 4px;
-        }
-        .active, .accordion:hover {
-            background-color: #e9e6df;
-        }
-        .panel {
-            display: none;
-            background-color: white;
-            overflow: hidden;
-            width: 100%;
-            margin-left: 10px;
-        }
-    </style>
+
     </head>
     <script>
         var acc = document.getElementsByClassName("accordion");

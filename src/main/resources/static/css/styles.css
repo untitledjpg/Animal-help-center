@@ -143,6 +143,12 @@
     background-color: #88524e !important;
 }
 
+.button-details{
+    font-size: 15px !important;
+    padding: 10px 10px !important;
+    text-decoration: unset !important;
+}
+
 .button-edit{
     background-color: #7fa3a9 !important;
     position: relative;
@@ -411,6 +417,12 @@ body {
 
 .card-group > .card {
     margin-bottom: 0.75rem;
+}
+
+.carousel-background{
+    background-color: #6e645e4f;
+    border-radius: 20px;
+    padding: 5px !important;
 }
 
 .catsheader{

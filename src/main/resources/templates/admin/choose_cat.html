@@ -12,19 +12,24 @@
 <div class="top" th:replace="/fragments.html :: admin-nav">
 </div>
 
-<div class="w3-container" id="where" style="padding-bottom:32px;">
-    <h5 class="h5"><span class="h5text">Edit cats</span>
+<div class="w3-container" id="where" >
+    <h5 class="h5"><span class="h5text">Cats</span>
     </h5>
     <div class="content" style="max-width:700px; ">
     </div>
+</div>
+
+<div>
+    <button type="button" onclick="location.href='/admin/cats/add'"
+            value="new" class="button btn-outline button-new " style="margin-left: 35px; margin-bottom: 10px;">Add new</button>
 </div>
 
 <div class="bg bodytext" style="margin-left: 2%; margin-right: 2%;">
     <div class="images" th:each="cat: ${cats}" style="margin: 5px">
         <a th:text="${cat.getName()}" class="text"></a>
         <img th:src="${cat.getPicturePath()}" width="210" height="210">
-        <a th:href="${'/admin/cats/edit/' + cat.getId()}" class="text">Details</a>
-        <a th:href="${'/admin/cats/delete/' + cat.getId()}" class="text">Delete</a>
+        <a th:href="${'/admin/cats/edit/' + cat.getId()}" type="button" class="button btn-outline button-edit button-details">Details/Edit</a>
+        <a th:href="${'/admin/cats/delete/' + cat.getId()}" type="button" class="button btn-outline button-delete button-details">Delete</a>
     </div>
 </div>
 

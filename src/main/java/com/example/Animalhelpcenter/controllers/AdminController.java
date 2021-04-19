@@ -78,20 +78,6 @@ public class AdminController {
         return new ModelAndView("redirect:/admin/cats/edit");
     }
 
-    /*    @GetMapping("/admin/confirm/{id}")     // confirmation of delete
-    public String confirmCarDelete(@PathVariable int id, Model model) {
-
-        var items = dhm.getCats();
-
-        var cat = dhm.getCatById(id);
-
-        model.addAttribute("title", "Cats");
-        model.addAttribute("cats", items);
-        model.addAttribute("confirmDelete", cat);
-
-        return "deletetest";
-    }*/
-
     @GetMapping("/admin/applications")
     public String getApplications(@ModelAttribute("selectApp") SelectedApplicationModel selectedApplicationModel, Model model, HttpSession session) {
 
@@ -105,28 +91,27 @@ public class AdminController {
     }
 
     @GetMapping("/admin/applications/manage")
-    public ModelAndView manageApp(@RequestParam int selectedApp, @RequestParam String clickedButton) {
+    public ModelAndView manageApplication(@RequestParam int selectedApp, @RequestParam String clickedButton) {
 
         if (clickedButton.equals("accept")) {
-            acceptApp(selectedApp);
+            acceptApplication(selectedApp);
         } else if (clickedButton.equals("reject")) {
-            rejectApp(selectedApp);
+            rejectApplication(selectedApp);
         } else {
-            deleteApp(selectedApp);
+            deleteApplication(selectedApp);
         }
         return new ModelAndView("redirect:/admin/applications");
     }
 
-    public void deleteApp(int selectedApp) {
+    public void deleteApplication(int selectedApp) {
 
         AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
         mng.deleteObject(appl);
     }
 
-    public void acceptApp(int selectedApp) {
+    public void acceptApplication(int selectedApp) {
 
         AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
-//        var appl = mng.getApplicationById(selectedApp);
         var cat = appl.getCat();
         cat.setCatStatus("adopted"); // changes cat status from "available" to "adopted" --> so it's not visible on user page anymore
 
@@ -135,7 +120,7 @@ public class AdminController {
         mng.updateObject(appl);
     }
 
-    public void rejectApp(int selectedApp) {
+    public void rejectApplication(int selectedApp) {
 
         AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
 
@@ -164,11 +149,24 @@ public class AdminController {
         }
     }
 
+    @GetMapping("/admin/volunteers/add")
+    public String addVolunteer(HttpSession session) {
+
+        return checkUser(session, "/admin/add_volunteer");
+    }
+
+    @PostMapping("/admin/volunteers/add")
+    public ModelAndView saveVolunteer(@ModelAttribute("addVolunteer") Volunteer dto) {
+
+        mng.saveObject(dto);
+
+        return new ModelAndView("redirect:/admin/volunteers");
+    }
+
 
     public String editVolunteer(@PathVariable int id, Model model, HttpSession session) {
 
         Volunteer volunteer = (Volunteer) mng.getObject(Volunteer.class, id);
-//        var volunteer = mng.getVolunteerById(id);
         model.addAttribute("volunteer", volunteer);
         model.addAttribute("id", id);
 
@@ -176,7 +174,7 @@ public class AdminController {
     }
 
     @PostMapping("/admin/volunteers/edit")
-    public ModelAndView saveVolunteer(@ModelAttribute("editVolunteer") Volunteer volunteer) {
+    public ModelAndView updateVolunteer(@ModelAttribute("editVolunteer") Volunteer volunteer) {
 
         mng.updateObject(volunteer);
         return new ModelAndView("redirect:/admin/volunteers");
@@ -211,7 +209,6 @@ public class AdminController {
     public String editTemporaryHome(@PathVariable int id, Model model, HttpSession session) {
 
         TempHome home = (TempHome) mng.getObject(TempHome.class, id);
-//        var home = mng.getTempHomeById(id);
         model.addAttribute("home", home);
         model.addAttribute("id", id);
 

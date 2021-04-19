@@ -58,36 +58,14 @@
 
             </tbody>
         </table>
-        <button type="submit" id='clickedButton' name="clickedButton"
+        <button type="button" onclick="location.href='/admin/volunteers/add'"
                 value="new" class="button btn-outline button-new btn-table">Add new</button>
         <button type="submit" id='clickedButton' name="clickedButton"
                 value="edit" class="button btn-outline button-edit btn-table">Edit</button>
-        <button type="submit" id='clickedButton' name="clickedButton" onclick="Delete()"
+        <button type="submit" id='clickedButton' name="clickedButton"
                 value="delete" class="button btn-outline button-delete btn-table">Delete</button>
     </form>
 </div>
-
-
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Confirm delete</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <p>Do you really want to delete this record?</p>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" id="btnDeleteCountry">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 
 </body>

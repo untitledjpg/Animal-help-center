@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>Adoption stories</title>
 </head>
-<body>
+<body class="bodycolor">
+<div class="top" th:replace="/fragments.html :: header">
+</div>
+<h5 class="h5" style="background-color: #efefef"><span class="h5text" style="background-color: #d8d4cd; ">HAPPY ADOPTION STORIES</span>
+</h5>
 
+<div>
 
+    <img src="/images/jack.png" style="max-width: 700px; float: left; margin-left: 100px;">
+
+        <p style=" max-width: 940px; text-align: justify; margin-left: 50px; float: left">
 This is an amazing story about kindness and compassion.
 About the fact that the fate of one basement kitten touched the hearts of many people and only thanks to all of you he recovered, turned into a mischievous, cheerful kitten and already safely found new owners and a home for himself.
 The story began like this: a small, skinny kitten with sore eyes huddled in the corner of an entrance in one of the houses in Rezekne.
 Probably ten people passed by, hurrying about their business, but one girl stopped and drew attention to this baby.
-From this moment, the story of real salvation begins:
--first, the baby is taken from the entrance and transported to the safe from Rezekne to Riga as soon as possible.
-- and already in Riga the struggle for the eyes and for the life of the saffron milk begins.
+From this moment, the story of real salvation begins. First, the baby is taken from the entrance and transported to the safe from Rezekne to Riga as soon as possible.
+And already in Riga the struggle for the eyes and for the life of kitty begins.
 We won this round. We were able to save eyesight and defeat a viral infection from which many kittens die.
-Then socialization in a temporary home and after a couple of months we have a wonderful, cute kitten ready for adoption.
-Of course, the choice of future owners was strict and we tried very hard to find those who would become a real family for our bunny. And now, Sam is at home!
-It is so good to see that our efforts and labors were not in vain.
+Then socialization in a temporary home and after a couple of months we had a wonderful, cute kitten ready for adoption.
+Of course, the choice of future owners was strict and we tried very hard to find those who would become a real family for him. And now, Jack is at home!
+        </p>
+</div>
+<div style="margin-top: 200px">
+    <img src="/images/susie.jpg" style="max-width: 400px; margin-top: 50px; float: right; margin-right: 100px;">
+<p style=" max-width: 800px; text-align: justify; margin-left: 100px; margin-top: 50px; float: left">
+Brittany C. found Susie after she strayed from home, and he made sure she knew that he chose her to be his cat mom.
+
+"I found her after she had wandered away from her litter. I searched all over for the mom or signs of other
+kittens and there were none. I decided to take her in after she climbed my leg and sat on my shoulder purring.
+She picked me, and I couldn’t say no.
+She needed some medical help, which was kindly provided by center volunteers, and after that she could finally
+go to her new home. All my family fell in love with her immediately. Also the other cat accepted well new friend."
+</p>
+</div>
+
 </body>
 </html>
