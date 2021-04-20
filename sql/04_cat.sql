@@ -11,18 +11,11 @@ CREATE TABLE `animalhelpcenter`.`cat`
     `status` VARCHAR(60) NOT NULL,
     `cat_arrival`  DATE NOT NULL,
     `temp_home_id` INT NOT NULL,
-    `volunteer_id` INT NOT NULL,
     PRIMARY KEY (`cat_id`),
     INDEX `temp_home_id_fk_idx` (`temp_home_id` ASC) VISIBLE,
-    INDEX  `volunteer_id_fk_idx` (`volunteer_id` ASC) VISIBLE,
     CONSTRAINT `temp_home_id_fk`
         FOREIGN KEY (`temp_home_id`)
             REFERENCES `animalhelpcenter`.`temp_home` (`temp_home_id`)
-            ON DELETE SET NULL
-            ON UPDATE CASCADE;
-CONSTRAINT `volunteer_id_fk`
-        FOREIGN KEY (`volunteer_id`)
-            REFERENCES `animalhelpcenter`.`volunteer` (`volunteer_id`)
             ON DELETE SET NULL
             ON UPDATE CASCADE;
 );
