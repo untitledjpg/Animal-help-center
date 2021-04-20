@@ -42,8 +42,7 @@ public class Cat {
     private Date catArrival;
     @Column(name = "temp_home_id")
     private Integer tempHomeId;
-    @Column(name = "volunteer_id")
-    private Integer volunteerId;
+
 
 
     @SneakyThrows
@@ -59,8 +58,7 @@ public class Cat {
                 rs.getString("picture_path"),
                 rs.getString("status"),
                 rs.getDate("cat_arrival"),
-                rs.getInt("temp_home_id"),
-                rs.getInt("volunteer_id"));
+                rs.getInt("temp_home_id"));
 
         return cat;
     }

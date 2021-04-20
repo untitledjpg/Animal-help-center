@@ -47,6 +47,12 @@ public class LoginController {
         return "/admin/admin";
     }
 
+    @GetMapping("/logout")
+    public ModelAndView logOut(HttpSession session){
+        session.setAttribute(SessionData.User, null);
+        return new ModelAndView("redirect:/");
+    }
+
     @GetMapping("/admin")
     public String getAdminPage(Model model, HttpSession session) { // can access with servlet request and session
 
@@ -61,11 +67,6 @@ public class LoginController {
         return "/admin/admin";
     }
 
-    @GetMapping("/logout")
-    public ModelAndView logOut(HttpSession session){
-        session.setAttribute(SessionData.User, null);
-        return new ModelAndView("redirect:/");
-    }
 
     public String checkUser(HttpSession session, String templateName) {
         var user = (Admin) session.getAttribute(SessionData.User);

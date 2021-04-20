@@ -71,5 +71,4 @@ public class VolunteersController {
         Volunteer volunteerToDelete = (Volunteer) mng.getObject(Volunteer.class, selectedVolunteer);
         mng.deleteObject(volunteerToDelete);
     }
-
 }

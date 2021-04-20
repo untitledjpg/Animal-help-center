@@ -66,11 +66,6 @@
         <label>Temporary home id:</label>
         <input class="input1" type="number" name="tempHomeId" id="tempHomeId" maxlength="100">
     </div>
-    <div>
-        <label>Volunteer id:</label>
-        <input class="input1" type="number" name="volunteerId" id="volunteerId" maxlength="100">
-    </div>
-    <div>
         <label>Picture url ( You can use this website to generate url: https://www.linkpicture.com/en/index.php) :</label>
         <input class="input1" type="text" name="picturePath" id="picturePath" maxlength="100"  >
     </div>
@@ -78,8 +73,10 @@
         <input type="hidden" name="catId" id="catId"  maxlength="100">
     </div>
 <!--    <input class="sendbtn button-new" style="margin-top: 20px" type="submit" value="Save">-->
-    <button type="submit" onclick="location.href='/admin/cats/manage'"
-            value="new" class="button btn-outline button-save btn-table">Save</button>
+<!--    <button type="submit" onclick="location.href='/admin/cats/manage'"-->
+<!--            value="new" class="button btn-outline button-save btn-table">Save</button>-->
+    <button type="submit" value="new" style="    margin-left: 27%;margin-top: 1%;" class="button btn-outline button-new">Save</button>
+    <button type="button" onclick="location.href='/admin/cats/edit'" class="button btn-outline ">Back</button>
 </form>
 
     </div>

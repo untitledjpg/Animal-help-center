@@ -43,12 +43,6 @@ public class AdoptionApplicationsController {
         return new ModelAndView("redirect:/admin/applications");
     }
 
-    public void deleteApplication(int selectedApp) {
-
-        AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
-        mng.deleteObject(appl);
-    }
-
     public void acceptApplication(int selectedApp) {
 
         AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
@@ -66,5 +60,11 @@ public class AdoptionApplicationsController {
 
         appl.setAppStatus("rejected");
         mng.updateObject(appl);
+    }
+
+    public void deleteApplication(int selectedApp) {
+
+        AdoptionApplication appl = (AdoptionApplication) mng.getObject(AdoptionApplication.class, selectedApp);
+        mng.deleteObject(appl);
     }
 }

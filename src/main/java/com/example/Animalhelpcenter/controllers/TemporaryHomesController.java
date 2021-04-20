@@ -36,6 +36,20 @@ public class TemporaryHomesController {
         }
     }
 
+    @GetMapping("/admin/homes/add")
+    public String addTemporaryHome(HttpSession session) {
+
+        return login.checkUser(session, "/admin/add_temp_home");
+    }
+
+    @PostMapping("/admin/homes/add")
+    public ModelAndView saveTemporaryHome(@ModelAttribute("addTempHome") TempHome tempHome) {
+
+        mng.saveObject(tempHome);
+
+        return new ModelAndView("redirect:/admin/homes"); // redirect
+    }
+
     public String editTemporaryHome(@PathVariable int id, Model model, HttpSession session) {
 
         TempHome home = (TempHome) mng.getObject(TempHome.class, id);
@@ -55,19 +69,5 @@ public class TemporaryHomesController {
     public void deleteTemporaryHome(int selectedHome) {
         TempHome homeToDelete = (TempHome) mng.getObject(TempHome.class, selectedHome);
         mng.deleteObject(homeToDelete);
-    }
-
-    @GetMapping("/admin/homes/add")
-    public String addTemporaryHome(HttpSession session) {
-
-        return login.checkUser(session, "/admin/add_temp_home");
-    }
-
-    @PostMapping("/admin/homes/add")
-    public ModelAndView saveTemporaryHome(@ModelAttribute("addTempHome") TempHome tempHome) {
-
-        mng.saveObject(tempHome);
-
-        return new ModelAndView("redirect:/admin/homes"); // redirect
     }
 }

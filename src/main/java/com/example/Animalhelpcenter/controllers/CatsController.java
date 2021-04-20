@@ -19,29 +19,12 @@ public class CatsController {
     LoginController login = new LoginController();
 
     @GetMapping("/admin/cats/edit")                  // choose cat to edit
-    public String manageCats(Model model, HttpSession session) {
+    public String getCats(Model model, HttpSession session) {
 
         var cats = mng.getCats();
         model.addAttribute("cats", cats);
 
         return login.checkUser(session, "/admin/choose_cat");
-    }
-
-    @GetMapping("/admin/cats/edit/{id}")             // edit specific cat
-    public String editCat(@PathVariable int id, Model model, HttpSession session) {
-
-        Cat cat = (Cat) mng.getObject(Cat.class, id);
-        model.addAttribute("cat", cat);
-        model.addAttribute("id", id);
-
-        return login.checkUser(session, "/admin/edit_cat");
-    }
-
-    @PostMapping("/admin/cats/edit")
-    public ModelAndView updateCat(@ModelAttribute("editCat") Cat cat) {
-
-        mng.updateObject(cat);
-        return new ModelAndView("redirect:/admin/cats/edit");
     }
 
     @GetMapping("/admin/cats/add")
@@ -62,6 +45,23 @@ public class CatsController {
         mng.saveObject(cat);
 
         return new ModelAndView("redirect:/admin/cats/edit"); // redirect
+    }
+
+    @GetMapping("/admin/cats/edit/{id}")             // edit specific cat
+    public String editCat(@PathVariable int id, Model model, HttpSession session) {
+
+        Cat cat = (Cat) mng.getObject(Cat.class, id);
+        model.addAttribute("cat", cat);
+        model.addAttribute("id", id);
+
+        return login.checkUser(session, "/admin/edit_cat");
+    }
+
+    @PostMapping("/admin/cats/edit")
+    public ModelAndView updateCat(@ModelAttribute("editCat") Cat cat) {
+
+        mng.updateObject(cat);
+        return new ModelAndView("redirect:/admin/cats/edit");
     }
 
     @GetMapping("/admin/cats/delete/{id}")
