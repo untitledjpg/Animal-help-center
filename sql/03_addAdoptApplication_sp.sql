@@ -1,12 +1,12 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `addAdoptApplication`(
 in id int,
-in name nvarchar(45),
-in surname nvarchar(45),
+in name nvarchar(60),
+in surname nvarchar(60),
 in phone_number int,
-in email nvarchar(45),
+in email nvarchar(60),
 in catId int,
-in other_pets nvarchar(45),
-in children nvarchar(45),
+in other_pets nvarchar(60),
+in children nvarchar(60),
 out new_id int)
 BEGIN
 IF id=0 THEN
